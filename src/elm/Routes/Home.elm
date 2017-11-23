@@ -33,7 +33,7 @@ home model =
                     [ text "avatar" ]
                 ]
             ]
-        , section
-            [ class "br-100 w10 h10 center bg-white" ]
+        , a
+            [ class "db br-100 w10 h10 center bg-bookbug", href "#pagetwo" ]
             []
         ]

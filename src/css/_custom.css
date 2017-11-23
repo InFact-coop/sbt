@@ -58,15 +58,9 @@ h1 {
   height: var(--height-10);
 }
 
-.checkbox {
-  display: none;
-}
-
-.checkbox-label {
-  display: inline-block;
-  padding: 0;
-  background:url("../assets/schoolTrip.svg");
-  height: 125px;
-  width: 125px;
-  background-size: 50%;
+.bg-bookbug {
+  background:url('assets/bookbug.png') no-repeat;
+  background-color: white;
+  background-size: 80%;
+  background-position: center;
 }
