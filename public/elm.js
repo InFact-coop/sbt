@@ -13280,57 +13280,111 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('w-60-ns center'),
+			_0: _elm_lang$html$Html_Attributes$class('w-40-ns center main vh-100'),
 			_1: {ctor: '[]'}
 		},
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$h1,
+				_elm_lang$html$Html$section,
+				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('tc f1'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('hello'),
+					_0: A2(
+						_elm_lang$html$Html$h1,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt5 b'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$span,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('db'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('Hi, '),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$span,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('db'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Ruth!'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$p,
+					_elm_lang$html$Html$section,
+					{ctor: '[]'},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('f3 w60 mh1 tc'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Welcome to this SPA elm boiler plate. Tachyons is included. Go nuts.'),
+						_0: A2(
+							_elm_lang$html$Html$h2,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('tc pt4 f3'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$span,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('db'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Choose your'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$span,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('db'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('avatar'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
+							}),
 						_1: {ctor: '[]'}
 					}),
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$input,
+						_elm_lang$html$Html$section,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('f3 w30 pa1 center db ba tc'),
-							_1: {
-								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onInput(_astroash$elm_spa_boiler_plate$Types$Change),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$value(model.userInput),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$placeholder('I update state, yo'),
-										_1: {ctor: '[]'}
-									}
-								}
-							}
+							_0: _elm_lang$html$Html_Attributes$class('br-100 w10 h10 center bg-white'),
+							_1: {ctor: '[]'}
 						},
 						{ctor: '[]'}),
 					_1: {ctor: '[]'}
@@ -13473,10 +13527,10 @@ var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbar = function (model) {
 		_elm_lang$html$Html$ul,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('dib ma0 bg-green w-100 pa2'),
+			_0: _elm_lang$html$Html_Attributes$class('ma0 bg-white w-100 pa2 dn'),
 			_1: {ctor: '[]'}
 		},
-		_astroash$elm_spa_boiler_plate$Routes_Navbar$navbarContent);
+		{ctor: '[]'});
 };
 
 var _astroash$elm_spa_boiler_plate$View$view = function (model) {
@@ -13493,7 +13547,11 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 	}();
 	return A2(
 		_elm_lang$html$Html$div,
-		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('bg-gray pa5'),
+			_1: {ctor: '[]'}
+		},
 		{
 			ctor: '::',
 			_0: _astroash$elm_spa_boiler_plate$Routes_Navbar$navbar(model),

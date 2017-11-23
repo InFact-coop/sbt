@@ -1,6 +1,7 @@
 module View exposing (..)
 
 import Html exposing (..)
+import Html.Attributes exposing (..)
 
 
 -- My Elm Files
@@ -26,7 +27,7 @@ view model =
                 PageTwoRoute ->
                     pageTwo model
     in
-        div []
+        div [ class "bg-gray pa5" ]
             [ navbar model
             , page
             ]

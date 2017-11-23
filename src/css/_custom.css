@@ -6,9 +6,54 @@ body {
      they aren't properly supported by all browsers yet so postcss turns them into normal css for you
   */
   font-family: var(--sans-serif);
+  font-size: var(--font-size-3);
+  color: var(--brand-teal);
   margin: 0;
+  font-weight: 400;
 }
 
 button {
   font-family: var(--sans-serif);
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: var(--font-size-subheadline);
+  font-weight: 700;
+}
+
+.main {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(242, 242, 242, 0.9) 100%);
+}
+
+.w6 {
+  width: var(--width-6);
+}
+.w7 {
+  width: var(--width-7);
+}
+.w8 {
+  width: var(--width-8);
+}
+.w9 {
+  width: var(--width-9);
+}
+.w10 {
+  width: var(--width-10);
+}
+
+.h6 {
+  height: var(--height-6);
+}
+.h7 {
+  height: var(--height-7);
+}
+.h8 {
+  height: var(--height-8);
+}
+.h9 {
+  height: var(--height-9);
+}
+.h10 {
+  height: var(--height-10);
 }
