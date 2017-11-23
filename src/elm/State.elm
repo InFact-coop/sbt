@@ -10,7 +10,7 @@ initModel : Model
 initModel =
     { route = HomeRoute
     , userInput = ""
-    , reasonForVisiting = [ ( "schoolTrip", False ), ( "book", False ), ( "computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
+    , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
     }
 
 

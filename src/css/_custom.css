@@ -75,42 +75,42 @@ h1 {
   background-position: center;
 }
 
-.schoolTrip {
+.school-trip {
   background:url('assets/schoolTrip.svg') no-repeat;
   background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
 
-.schoolTrip-checked {
+.school-trip-checked {
   background:url('assets/schoolTrip-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
 }
 
-.book {
+.borrow-a-book {
   background:url('assets/book.svg') no-repeat;
   background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
 
-.book-checked {
+.borrow-a-book-checked {
   background:url('assets/book-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
 }
 
-.computer {
+.use-a-computer {
   background:url('assets/computer.svg') no-repeat;
   background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
 
-.computer-checked {
+.use-a-computer-checked {
   background:url('assets/computer-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;

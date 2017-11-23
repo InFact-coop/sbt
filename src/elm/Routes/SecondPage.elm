@@ -26,9 +26,9 @@ createIcons model =
 isChecked : ( String, Bool ) -> String
 isChecked ( iconClass, isToggled ) =
     if isToggled == True then
-        iconClass ++ "-checked"
+        (classHelper iconClass) ++ "-checked"
     else
-        iconClass
+        classHelper iconClass
 
 
 createIcon : ( String, Bool ) -> Html Msg
@@ -37,9 +37,10 @@ createIcon ( iconClass, isToggled ) =
         [ input [ type_ "checkbox", class "dn", name "icon", id "icon" ]
             []
         , label [ class <| isChecked ( iconClass, isToggled ) ++ " dib br-100 h5 w5 icon", for "icon", onClick (ToggleIcon ( iconClass, isToggled )) ] []
-        , caption [ class "caption f4 tc pt2 ma2" ] [ text "school trip" ]
+        , caption [ class "caption f4 tc pt2 ma2" ] [ text iconClass ]
         ]
 
 
-
--- <img class="tc-ns w-50 h-50 margin-0-auto pb2 db mt3" src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-smartphone-4.png&r=51&g=51&b=51" alt="sms">
+classHelper : String -> String
+classHelper string =
+    String.join "-" <| String.words string

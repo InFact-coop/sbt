@@ -8881,13 +8881,13 @@ var _astroash$elm_spa_boiler_plate$State$initModel = {
 	userInput: '',
 	reasonForVisiting: {
 		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'schoolTrip', _1: false},
+		_0: {ctor: '_Tuple2', _0: 'school trip', _1: false},
 		_1: {
 			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'book', _1: false},
+			_0: {ctor: '_Tuple2', _0: 'borrow a book', _1: false},
 			_1: {
 				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'computer', _1: false},
+				_0: {ctor: '_Tuple2', _0: 'use a computer', _1: false},
 				_1: {
 					ctor: '::',
 					_0: {ctor: '_Tuple2', _0: 'wifi', _1: false},
@@ -9493,10 +9493,19 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 		});
 };
 
+var _astroash$elm_spa_boiler_plate$Routes_SecondPage$classHelper = function (string) {
+	return A2(
+		_elm_lang$core$String$join,
+		'-',
+		_elm_lang$core$String$words(string));
+};
 var _astroash$elm_spa_boiler_plate$Routes_SecondPage$isChecked = function (_p0) {
 	var _p1 = _p0;
 	var _p2 = _p1._0;
-	return _elm_lang$core$Native_Utils.eq(_p1._1, true) ? A2(_elm_lang$core$Basics_ops['++'], _p2, '-checked') : _p2;
+	return _elm_lang$core$Native_Utils.eq(_p1._1, true) ? A2(
+		_elm_lang$core$Basics_ops['++'],
+		_astroash$elm_spa_boiler_plate$Routes_SecondPage$classHelper(_p2),
+		'-checked') : _astroash$elm_spa_boiler_plate$Routes_SecondPage$classHelper(_p2);
 };
 var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (_p3) {
 	var _p4 = _p3;
@@ -9567,7 +9576,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (_p3)
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('school trip'),
+							_0: _elm_lang$html$Html$text(_p5),
 							_1: {ctor: '[]'}
 						}),
 					_1: {ctor: '[]'}
