@@ -66,76 +66,84 @@ h1 {
 }
 
 .schoolTrip {
-  background:url('assets/bag.svg') no-repeat;
+  background:url('assets/schoolTrip.svg') no-repeat;
   background-color: white;
   background-size: 60%;
   background-position: center;
 }
 
 .schoolTrip-checked {
-  background:url('assets/bookbug.png') no-repeat;
+  background:url('assets/schoolTrip-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
 }
 
 .book {
-  background:url('assets/bag.svg') no-repeat;
+  background:url('assets/book.svg') no-repeat;
   background-color: white;
   background-size: 60%;
   background-position: center;
 }
 
 .book-checked {
-  background:url('assets/bookbug.png') no-repeat;
+  background:url('assets/book-checked.png') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
-}.computer {
-  background:url('assets/bag.svg') no-repeat;
+}
+
+.computer {
+  background:url('assets/computer.svg') no-repeat;
   background-color: white;
   background-size: 60%;
   background-position: center;
 }
 
 .computer-checked {
-  background:url('assets/bookbug.png') no-repeat;
+  background:url('assets/computer-checked.png') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
-}.wifi {
-  background:url('assets/bag.svg') no-repeat;
+}
+
+.wifi {
+  background:url('assets/wifi.svg') no-repeat;
   background-color: white;
   background-size: 60%;
   background-position: center;
 }
 
 .wifi-checked {
-  background:url('assets/bookbug.png') no-repeat;
+  background:url('assets/wifi-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
-}.event {
-  background:url('assets/bag.svg') no-repeat;
+}
+
+.event {
+  background:url('assets/event.svg') no-repeat;
   background-color: white;
   background-size: 60%;
   background-position: center;
 }
 
 .event-checked {
-  background:url('assets/bookbug.png') no-repeat;
+  background:url('assets/event-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
-}.bookbug {
-  background:url('assets/bag.svg') no-repeat;
+}
+
+.bookbug {
+  background:url('assets/question.svg') no-repeat;
   background-color: white;
   background-size: 60%;
   background-position: center;
 }
 
 .bookbug-checked {
-  background:url('assets/bookbug.png') no-repeat;
+  background:url('assets/question-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
