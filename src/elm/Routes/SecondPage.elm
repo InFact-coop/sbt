@@ -26,9 +26,11 @@ createIcons model =
 isChecked : ( String, Bool ) -> String
 isChecked ( iconClass, isToggled ) =
     if isToggled == True then
-        (classHelper iconClass) ++ "-checked"
+        (classHelper iconClass)
+            ++ "-checked"
     else
-        classHelper iconClass
+        classHelper
+            iconClass
 
 
 createIcon : ( String, Bool ) -> Html Msg
