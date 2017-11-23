@@ -10,6 +10,7 @@ initModel : Model
 initModel =
     { route = HomeRoute
     , userInput = ""
+    , reasonForVisiting = [ ( "schoolTrip", False ), ( "book", False ), ( "computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
     }
 
 
@@ -33,6 +34,14 @@ getRoute hash =
             HomeRoute
 
 
+findToggledIcon : ( String, Bool ) -> ( String, Bool )
+findToggledIcon ( class, isToggled ) =
+    if Tuple.first == class then
+        ( class, not isToggled )
+    else
+        ( class, isToggled )
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
@@ -41,3 +50,6 @@ update msg model =
 
         UrlChange location ->
             ( { model | route = (getRoute location.hash) }, Cmd.none )
+
+        ToggleIcon ( class, toggled ) ->
+            ( { model | reasonForVisiting = (List.map findToggledIcon model.reasonForVisiting) }, Cmd.none )

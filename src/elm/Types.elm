@@ -15,6 +15,7 @@ type Route
 type alias Model =
     { route : Route
     , userInput : String
+    , reasonForVisiting : List ( String, Bool )
     }
 
 
@@ -25,3 +26,4 @@ type alias Model =
 type Msg
     = Change String
     | UrlChange Navigation.Location
+    | ToggleIcon ( String, Bool )
