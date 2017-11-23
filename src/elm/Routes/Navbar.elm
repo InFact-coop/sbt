@@ -7,8 +7,8 @@ import Types exposing (..)
 
 navbar : Model -> Html Msg
 navbar model =
-    ul [ class "dib ma0 bg-green w-100 pa2" ]
-        navbarContent
+    ul [ class "ma0 bg-white w-100 pa2 dn" ]
+        []
 
 
 navbarLink : ( String, String ) -> Html Msg
