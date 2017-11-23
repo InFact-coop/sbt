@@ -8803,6 +8803,7 @@ var _astroash$elm_spa_boiler_plate$Types$Model = F3(
 	function (a, b, c) {
 		return {route: a, userInput: b, reasonForVisiting: c};
 	});
+var _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute = {ctor: 'ThirdPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$PageTwoRoute = {ctor: 'PageTwoRoute'};
 var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
@@ -8833,6 +8834,8 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 			return _astroash$elm_spa_boiler_plate$Types$SecondPageRoute;
 		case '#pagetwo':
 			return _astroash$elm_spa_boiler_plate$Types$PageTwoRoute;
+		case '#thirdPage':
+			return _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute;
 		default:
 			return _astroash$elm_spa_boiler_plate$Types$HomeRoute;
 	}
@@ -9487,7 +9490,14 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 							}
 						},
 						{ctor: '[]'}),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$audio,
+							{ctor: '[]'},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});
@@ -9672,6 +9682,32 @@ var _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo = function (model) {
 		});
 };
 
+var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('tc f3 pa5 ma2'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('What\'s your story?'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+
 var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbarLink = function (_p0) {
 	var _p1 = _p0;
 	return A2(
@@ -9738,8 +9774,10 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 				return _astroash$elm_spa_boiler_plate$Routes_Home$home(model);
 			case 'SecondPageRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage(model);
-			default:
+			case 'PageTwoRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo(model);
+			default:
+				return _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage(model);
 		}
 	}();
 	return A2(

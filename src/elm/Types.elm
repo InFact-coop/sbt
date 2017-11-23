@@ -10,6 +10,7 @@ type Route
     = HomeRoute
     | SecondPageRoute
     | PageTwoRoute
+    | ThirdPageRoute
 
 
 type alias Model =

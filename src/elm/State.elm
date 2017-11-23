@@ -30,6 +30,9 @@ getRoute hash =
         "#pagetwo" ->
             PageTwoRoute
 
+        "#thirdPage" ->
+            ThirdPageRoute
+
         _ ->
             HomeRoute
 
