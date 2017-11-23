@@ -34,6 +34,8 @@ home model =
                 ]
             ]
         , section
-            [ class "br-100 w10 h10 center bg-white" ]
+            [ class "br-100 w10 h10 center bg-bookbug" ]
             []
+        , img
+            [ src "http://scottishbooktrust.com/files/mascot-maincmyk.jpg" ]
         ]

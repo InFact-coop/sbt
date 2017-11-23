@@ -57,3 +57,10 @@ h1 {
 .h10 {
   height: var(--height-10);
 }
+
+.bg-bookbug {
+  background:url('assets/bookbug.png') no-repeat;
+  background-color: white;
+  background-size: 80%;
+  background-position: center;
+}

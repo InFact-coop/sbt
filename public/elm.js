@@ -13383,7 +13383,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 						_elm_lang$html$Html$section,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('br-100 w10 h10 center bg-white'),
+							_0: _elm_lang$html$Html_Attributes$class('br-100 w10 h10 center bg-bookbug'),
 							_1: {ctor: '[]'}
 						},
 						{ctor: '[]'}),
