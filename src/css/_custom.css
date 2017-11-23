@@ -65,11 +65,13 @@ h1 {
   background-position: center;
 }
 
-.whatever {
-  background:url('assets/schoolTrip.svg') no-repeat;
+.schoolTrip {
+  background:url('assets/bag.svg') no-repeat;
   background-color: white;
-  background-size: 80%;
+  background-size: 60%;
   background-position: center;
-  width: 100px;
-  height: 100px;
+}
+
+input[type="checkbox"]:checked + label {
+  background:url('assets/bookbug.png') no-repeat;
 }
