@@ -64,3 +64,12 @@ h1 {
   background-size: 80%;
   background-position: center;
 }
+
+.whatever {
+  background:url('assets/schoolTrip.svg') no-repeat;
+  background-color: white;
+  background-size: 80%;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}

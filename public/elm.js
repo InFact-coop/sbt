@@ -13380,11 +13380,15 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$section,
+						_elm_lang$html$Html$a,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('br-100 w10 h10 center bg-white'),
-							_1: {ctor: '[]'}
+							_0: _elm_lang$html$Html_Attributes$class('db br-100 w10 h10 center bg-bookbug'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$href('#secondPage'),
+								_1: {ctor: '[]'}
+							}
 						},
 						{ctor: '[]'}),
 					_1: {ctor: '[]'}
@@ -13426,88 +13430,64 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 				ctor: '::',
 				_0: A2(
 					_elm_lang$html$Html$li,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('h10 bg-white'),
-						_1: {ctor: '[]'}
-					},
+					{ctor: '[]'},
 					{
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$div,
+							_elm_lang$html$Html$fieldset,
 							{ctor: '[]'},
 							{
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$input,
+									_elm_lang$html$Html$label,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('checkbox'),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
-											_1: {
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$name('thing'),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$value('thing'),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$id('thing'),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
+										_0: _elm_lang$html$Html_Attributes$class('whatever'),
+										_1: {ctor: '[]'}
 									},
 									{
 										ctor: '::',
 										_0: A2(
-											_elm_lang$html$Html$label,
+											_elm_lang$html$Html$input,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('checkbox-label'),
+												_0: _elm_lang$html$Html_Attributes$class('o-0'),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$for('thing'),
+													_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
 													_1: {ctor: '[]'}
 												}
 											},
 											{
 												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$img,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('tc-ns w-50 h-50 margin-0-auto pb2 db mt3'),
-														_1: {
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$src('https://media.tenor.com/images/5fa65c8c2585f629b9814fed5a802ef8/tenor.gif'),
-															_1: {ctor: '[]'}
-														}
-													},
-													{
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$div,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('tc'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text('text'),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
-													}),
+												_0: _elm_lang$html$Html$text('whatev'),
 												_1: {ctor: '[]'}
 											}),
 										_1: {ctor: '[]'}
 									}),
-								_1: {ctor: '[]'}
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$label,
+										{ctor: '[]'},
+										{
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$input,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('bla'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
 							}),
 						_1: {ctor: '[]'}
 					}),
