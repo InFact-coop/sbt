@@ -58,6 +58,15 @@ h1 {
   height: var(--height-10);
 }
 
+/* Icon Stuff */
+
+.iconGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  grid-template-rows: 4fr 4fr 4fr;
+}
+
 .bg-bookbug {
   background:url('assets/bookbug.png') no-repeat;
   background-color: white;
@@ -67,7 +76,7 @@ h1 {
 
 .schoolTrip {
   background:url('assets/schoolTrip.svg') no-repeat;
-  background-color: white;
+  background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
@@ -81,13 +90,13 @@ h1 {
 
 .book {
   background:url('assets/book.svg') no-repeat;
-  background-color: white;
+  background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
 
 .book-checked {
-  background:url('assets/book-checked.png') no-repeat;
+  background:url('assets/book-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
@@ -95,13 +104,13 @@ h1 {
 
 .computer {
   background:url('assets/computer.svg') no-repeat;
-  background-color: white;
+  background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
 
 .computer-checked {
-  background:url('assets/computer-checked.png') no-repeat;
+  background:url('assets/computer-checked.svg') no-repeat;
   background-color: var(--brand-teal);
   background-size: 60%;
   background-position: center;
@@ -109,7 +118,7 @@ h1 {
 
 .wifi {
   background:url('assets/wifi.svg') no-repeat;
-  background-color: white;
+  background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
@@ -123,7 +132,7 @@ h1 {
 
 .event {
   background:url('assets/event.svg') no-repeat;
-  background-color: white;
+  background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }
@@ -137,7 +146,7 @@ h1 {
 
 .bookbug {
   background:url('assets/question.svg') no-repeat;
-  background-color: white;
+  background-color: rgba(44, 106, 138, 0.09);
   background-size: 60%;
   background-position: center;
 }

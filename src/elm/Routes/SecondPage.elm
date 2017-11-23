@@ -8,20 +8,15 @@ import Types exposing (..)
 
 secondPage : Model -> Html Msg
 secondPage model =
-    div [ class "center main" ]
-        [ section [] [ h1 [ class "tc f3" ] [ text "What brings you here?" ] ]
+    div [ class "center main mw6 min-h-100" ]
+        [ section [] [ h1 [ class "tc f3 pa5 ma2" ] [ text "What brings you here?" ] ]
         , createIcons model
-
-        -- , label [ class "schoolTrip dib br-100 h5 w5", for "icon" ]
-        --     [ input [ class "input o-0", name "icon", type_ "checkbox", value "school" ]
-        --         []
-        --     ]
         ]
 
 
 createIcons : Model -> Html Msg
 createIcons model =
-    section []
+    section [ class "iconGrid" ]
         (List.map
             createIcon
             model.reasonForVisiting
@@ -38,7 +33,7 @@ isChecked ( iconClass, isToggled ) =
 
 createIcon : ( String, Bool ) -> Html Msg
 createIcon ( iconClass, isToggled ) =
-    div [ class "dib iconContainer" ]
+    div [ class "dib iconContainer ma3" ]
         [ input [ type_ "checkbox", class "dn", name "icon", id "icon" ]
             []
         , label [ class <| isChecked ( iconClass, isToggled ) ++ " dib br-100 h5 w5 icon", for "icon", onClick (ToggleIcon ( iconClass, isToggled )) ] []

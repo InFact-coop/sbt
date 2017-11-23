@@ -27,7 +27,7 @@ view model =
                 PageTwoRoute ->
                     pageTwo model
     in
-        div [ class "bg-gray pa5" ]
+        div [ class "" ]
             [ navbar model
             , page
             ]
