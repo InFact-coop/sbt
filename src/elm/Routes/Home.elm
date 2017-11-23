@@ -33,9 +33,7 @@ home model =
                     [ text "avatar" ]
                 ]
             ]
-        , section
-            [ class "br-100 w10 h10 center bg-bookbug" ]
+        , a
+            [ class "db br-100 w10 h10 center bg-bookbug", href "#pagetwo" ]
             []
-        , img
-            [ src "http://scottishbooktrust.com/files/mascot-maincmyk.jpg" ]
         ]

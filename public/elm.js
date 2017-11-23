@@ -13380,11 +13380,15 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$section,
+						_elm_lang$html$Html$a,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('br-100 w10 h10 center bg-bookbug'),
-							_1: {ctor: '[]'}
+							_0: _elm_lang$html$Html_Attributes$class('db br-100 w10 h10 center bg-bookbug'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$href('#pagetwo'),
+								_1: {ctor: '[]'}
+							}
 						},
 						{ctor: '[]'}),
 					_1: {ctor: '[]'}
