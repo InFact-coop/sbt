@@ -72,6 +72,71 @@ h1 {
   background-position: center;
 }
 
-input[type="checkbox"]:checked + label {
+.schoolTrip-checked {
   background:url('assets/bookbug.png') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}
+
+.book {
+  background:url('assets/bag.svg') no-repeat;
+  background-color: white;
+  background-size: 60%;
+  background-position: center;
+}
+
+.book-checked {
+  background:url('assets/bookbug.png') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}.computer {
+  background:url('assets/bag.svg') no-repeat;
+  background-color: white;
+  background-size: 60%;
+  background-position: center;
+}
+
+.computer-checked {
+  background:url('assets/bookbug.png') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}.wifi {
+  background:url('assets/bag.svg') no-repeat;
+  background-color: white;
+  background-size: 60%;
+  background-position: center;
+}
+
+.wifi-checked {
+  background:url('assets/bookbug.png') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}.event {
+  background:url('assets/bag.svg') no-repeat;
+  background-color: white;
+  background-size: 60%;
+  background-position: center;
+}
+
+.event-checked {
+  background:url('assets/bookbug.png') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}.bookbug {
+  background:url('assets/bag.svg') no-repeat;
+  background-color: white;
+  background-size: 60%;
+  background-position: center;
+}
+
+.bookbug-checked {
+  background:url('assets/bookbug.png') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
 }

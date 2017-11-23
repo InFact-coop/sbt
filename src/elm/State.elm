@@ -34,12 +34,12 @@ getRoute hash =
             HomeRoute
 
 
-findToggledIcon : ( String, Bool ) -> ( String, Bool )
-findToggledIcon ( class, isToggled ) =
-    if Tuple.first == class then
-        ( class, not isToggled )
+findToggledIcon : ( String, Bool ) -> ( String, Bool ) -> ( String, Bool )
+findToggledIcon ( mappedClass, isMappedToggled ) ( selectedClass, isSelectedToggled ) =
+    if selectedClass == mappedClass then
+        ( mappedClass, not isMappedToggled )
     else
-        ( class, isToggled )
+        ( mappedClass, isMappedToggled )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -51,5 +51,5 @@ update msg model =
         UrlChange location ->
             ( { model | route = (getRoute location.hash) }, Cmd.none )
 
-        ToggleIcon ( class, toggled ) ->
-            ( { model | reasonForVisiting = (List.map findToggledIcon model.reasonForVisiting) }, Cmd.none )
+        ToggleIcon classTuple ->
+            ( { model | reasonForVisiting = (List.map (\n -> findToggledIcon n classTuple) model.reasonForVisiting) }, Cmd.none )

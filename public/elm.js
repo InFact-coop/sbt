@@ -12758,13 +12758,16 @@ var _elm_lang$navigation$Navigation$onEffects = F4(
 	});
 _elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/navigation', init: _elm_lang$navigation$Navigation$init, onEffects: _elm_lang$navigation$Navigation$onEffects, onSelfMsg: _elm_lang$navigation$Navigation$onSelfMsg, tag: 'fx', cmdMap: _elm_lang$navigation$Navigation$cmdMap, subMap: _elm_lang$navigation$Navigation$subMap};
 
-var _astroash$elm_spa_boiler_plate$Types$Model = F2(
-	function (a, b) {
-		return {route: a, userInput: b};
+var _astroash$elm_spa_boiler_plate$Types$Model = F3(
+	function (a, b, c) {
+		return {route: a, userInput: b, reasonForVisiting: c};
 	});
 var _astroash$elm_spa_boiler_plate$Types$PageTwoRoute = {ctor: 'PageTwoRoute'};
 var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
+var _astroash$elm_spa_boiler_plate$Types$ToggleIcon = function (a) {
+	return {ctor: 'ToggleIcon', _0: a};
+};
 var _astroash$elm_spa_boiler_plate$Types$UrlChange = function (a) {
 	return {ctor: 'UrlChange', _0: a};
 };
@@ -12772,9 +12775,17 @@ var _astroash$elm_spa_boiler_plate$Types$Change = function (a) {
 	return {ctor: 'Change', _0: a};
 };
 
+var _astroash$elm_spa_boiler_plate$State$findToggledIcon = F2(
+	function (_p1, _p0) {
+		var _p2 = _p1;
+		var _p5 = _p2._0;
+		var _p4 = _p2._1;
+		var _p3 = _p0;
+		return _elm_lang$core$Native_Utils.eq(_p3._0, _p5) ? {ctor: '_Tuple2', _0: _p5, _1: !_p4} : {ctor: '_Tuple2', _0: _p5, _1: _p4};
+	});
 var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
-	var _p0 = hash;
-	switch (_p0) {
+	var _p6 = hash;
+	switch (_p6) {
 		case '#home':
 			return _astroash$elm_spa_boiler_plate$Types$HomeRoute;
 		case '#secondPage':
@@ -12787,28 +12798,72 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 };
 var _astroash$elm_spa_boiler_plate$State$update = F2(
 	function (msg, model) {
-		var _p1 = msg;
-		if (_p1.ctor === 'Change') {
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					model,
-					{userInput: _p1._0}),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
-		} else {
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					model,
-					{
-						route: _astroash$elm_spa_boiler_plate$State$getRoute(_p1._0.hash)
-					}),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
+		var _p7 = msg;
+		switch (_p7.ctor) {
+			case 'Change':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{userInput: _p7._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'UrlChange':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							route: _astroash$elm_spa_boiler_plate$State$getRoute(_p7._0.hash)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							reasonForVisiting: A2(
+								_elm_lang$core$List$map,
+								function (n) {
+									return A2(_astroash$elm_spa_boiler_plate$State$findToggledIcon, n, _p7._0);
+								},
+								model.reasonForVisiting)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
 		}
 	});
-var _astroash$elm_spa_boiler_plate$State$initModel = {route: _astroash$elm_spa_boiler_plate$Types$HomeRoute, userInput: ''};
+var _astroash$elm_spa_boiler_plate$State$initModel = {
+	route: _astroash$elm_spa_boiler_plate$Types$HomeRoute,
+	userInput: '',
+	reasonForVisiting: {
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'schoolTrip', _1: false},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'book', _1: false},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'computer', _1: false},
+				_1: {
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'wifi', _1: false},
+					_1: {
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'event', _1: false},
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'bookbug', _1: false},
+							_1: {ctor: '[]'}
+						}
+					}
+				}
+			}
+		}
+	}
+};
 
 var _elm_lang$html$Html_Attributes$map = _elm_lang$virtual_dom$VirtualDom$mapProperty;
 var _elm_lang$html$Html_Attributes$attribute = _elm_lang$virtual_dom$VirtualDom$attribute;
@@ -13397,26 +13452,38 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 		});
 };
 
-var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (imgClass) {
+var _astroash$elm_spa_boiler_plate$Routes_SecondPage$isChecked = function (_p0) {
+	var _p1 = _p0;
+	var _p2 = _p1._0;
+	return _elm_lang$core$Native_Utils.eq(_p1._1, true) ? A2(_elm_lang$core$Basics_ops['++'], _p2, '-checked') : _p2;
+};
+var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (_p3) {
+	var _p4 = _p3;
+	var _p6 = _p4._1;
+	var _p5 = _p4._0;
 	return A2(
 		_elm_lang$html$Html$div,
-		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('dib iconContainer'),
+			_1: {ctor: '[]'}
+		},
 		{
 			ctor: '::',
 			_0: A2(
 				_elm_lang$html$Html$input,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('input dn'),
+					_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
 					_1: {
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$name('icon'),
+						_0: _elm_lang$html$Html_Attributes$class('dn'),
 						_1: {
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+							_0: _elm_lang$html$Html_Attributes$name('icon'),
 							_1: {
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$value('school'),
+								_0: _elm_lang$html$Html_Attributes$id('icon'),
 								_1: {ctor: '[]'}
 							}
 						}
@@ -13430,17 +13497,33 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (imgC
 					{
 						ctor: '::',
 						_0: _elm_lang$html$Html_Attributes$class(
-							A2(_elm_lang$core$Basics_ops['++'], 'dib br-100 h5 w5 ', imgClass)),
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_astroash$elm_spa_boiler_plate$Routes_SecondPage$isChecked(
+									{ctor: '_Tuple2', _0: _p5, _1: _p6}),
+								' dib br-100 h5 w5 icon')),
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$html$Html_Attributes$for('icon'),
-							_1: {ctor: '[]'}
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(
+									_astroash$elm_spa_boiler_plate$Types$ToggleIcon(
+										{ctor: '_Tuple2', _0: _p5, _1: _p6})),
+								_1: {ctor: '[]'}
+							}
 						}
 					},
 					{ctor: '[]'}),
 				_1: {ctor: '[]'}
 			}
 		});
+};
+var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcons = function (model) {
+	return A2(
+		_elm_lang$html$Html$section,
+		{ctor: '[]'},
+		A2(_elm_lang$core$List$map, _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon, model.reasonForVisiting));
 };
 var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (model) {
 	return A2(
@@ -13469,13 +13552,13 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 							_0: _elm_lang$html$Html$text('What brings you here?'),
 							_1: {ctor: '[]'}
 						}),
-					_1: {
-						ctor: '::',
-						_0: _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon('schoolTrip'),
-						_1: {ctor: '[]'}
-					}
+					_1: {ctor: '[]'}
 				}),
-			_1: {ctor: '[]'}
+			_1: {
+				ctor: '::',
+				_0: _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcons(model),
+				_1: {ctor: '[]'}
+			}
 		});
 };
 
@@ -13622,7 +13705,7 @@ var _astroash$elm_spa_boiler_plate$Main$main = A2(
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};
 if (typeof _astroash$elm_spa_boiler_plate$Main$main !== 'undefined') {
-    _astroash$elm_spa_boiler_plate$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Types.Msg":{"args":[],"tags":{"Change":["String"],"UrlChange":["Navigation.Location"]}}},"aliases":{"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Types.Msg"},"versions":{"elm":"0.18.0"}});
+    _astroash$elm_spa_boiler_plate$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Types.Msg":{"args":[],"tags":{"Change":["String"],"ToggleIcon":["( String, Bool )"],"UrlChange":["Navigation.Location"]}}},"aliases":{"Navigation.Location":{"args":[],"type":"{ href : String , host : String , hostname : String , protocol : String , origin : String , port_ : String , pathname : String , search : String , hash : String , username : String , password : String }"}},"message":"Types.Msg"},"versions":{"elm":"0.18.0"}});
 }
 
 if (typeof define === "function" && define['amd'])
