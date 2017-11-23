@@ -8799,14 +8799,23 @@ var _elm_lang$navigation$Navigation$onEffects = F4(
 	});
 _elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/navigation', init: _elm_lang$navigation$Navigation$init, onEffects: _elm_lang$navigation$Navigation$onEffects, onSelfMsg: _elm_lang$navigation$Navigation$onSelfMsg, tag: 'fx', cmdMap: _elm_lang$navigation$Navigation$cmdMap, subMap: _elm_lang$navigation$Navigation$subMap};
 
-var _astroash$elm_spa_boiler_plate$Types$Model = F3(
-	function (a, b, c) {
-		return {route: a, userInput: b, reasonForVisiting: c};
+var _astroash$elm_spa_boiler_plate$Types$Model = F4(
+	function (a, b, c, d) {
+		return {route: a, userInput: b, reasonForVisiting: c, audioMessage: d};
 	});
 var _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute = {ctor: 'ThirdPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$PageTwoRoute = {ctor: 'PageTwoRoute'};
 var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
+var _astroash$elm_spa_boiler_plate$Types$RecieveAudio = function (a) {
+	return {ctor: 'RecieveAudio', _0: a};
+};
+var _astroash$elm_spa_boiler_plate$Types$RecordStop = function (a) {
+	return {ctor: 'RecordStop', _0: a};
+};
+var _astroash$elm_spa_boiler_plate$Types$RecordStart = function (a) {
+	return {ctor: 'RecordStart', _0: a};
+};
 var _astroash$elm_spa_boiler_plate$Types$ToggleIcon = function (a) {
 	return {ctor: 'ToggleIcon', _0: a};
 };
@@ -8840,45 +8849,6 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 			return _astroash$elm_spa_boiler_plate$Types$HomeRoute;
 	}
 };
-var _astroash$elm_spa_boiler_plate$State$update = F2(
-	function (msg, model) {
-		var _p7 = msg;
-		switch (_p7.ctor) {
-			case 'Change':
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{userInput: _p7._0}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
-			case 'UrlChange':
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{
-							route: _astroash$elm_spa_boiler_plate$State$getRoute(_p7._0.hash)
-						}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
-			default:
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{
-							reasonForVisiting: A2(
-								_elm_lang$core$List$map,
-								function (n) {
-									return A2(_astroash$elm_spa_boiler_plate$State$findToggledIcon, n, _p7._0);
-								},
-								model.reasonForVisiting)
-						}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
-		}
-	});
 var _astroash$elm_spa_boiler_plate$State$initModel = {
 	route: _astroash$elm_spa_boiler_plate$Types$HomeRoute,
 	userInput: '',
@@ -8906,7 +8876,81 @@ var _astroash$elm_spa_boiler_plate$State$initModel = {
 				}
 			}
 		}
-	}
+	},
+	audioMessage: ''
+};
+var _astroash$elm_spa_boiler_plate$State$recordStart = _elm_lang$core$Native_Platform.outgoingPort(
+	'recordStart',
+	function (v) {
+		return v;
+	});
+var _astroash$elm_spa_boiler_plate$State$recordStop = _elm_lang$core$Native_Platform.outgoingPort(
+	'recordStop',
+	function (v) {
+		return v;
+	});
+var _astroash$elm_spa_boiler_plate$State$update = F2(
+	function (msg, model) {
+		var _p7 = msg;
+		switch (_p7.ctor) {
+			case 'Change':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{userInput: _p7._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'UrlChange':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							route: _astroash$elm_spa_boiler_plate$State$getRoute(_p7._0.hash)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'ToggleIcon':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{
+							reasonForVisiting: A2(
+								_elm_lang$core$List$map,
+								function (n) {
+									return A2(_astroash$elm_spa_boiler_plate$State$findToggledIcon, n, _p7._0);
+								},
+								model.reasonForVisiting)
+						}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'RecordStart':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _astroash$elm_spa_boiler_plate$State$recordStart(_p7._0)
+				};
+			case 'RecordStop':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: _astroash$elm_spa_boiler_plate$State$recordStop(_p7._0)
+				};
+			default:
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{audioMessage: _p7._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+		}
+	});
+var _astroash$elm_spa_boiler_plate$State$audioUrl = _elm_lang$core$Native_Platform.incomingPort('audioUrl', _elm_lang$core$Json_Decode$string);
+var _astroash$elm_spa_boiler_plate$State$subscriptions = function (model) {
+	return _astroash$elm_spa_boiler_plate$State$audioUrl(_astroash$elm_spa_boiler_plate$Types$RecieveAudio);
 };
 
 var _elm_lang$html$Html_Attributes$map = _elm_lang$virtual_dom$VirtualDom$mapProperty;
@@ -9704,7 +9748,88 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model)
 					_0: _elm_lang$html$Html$text('What\'s your story?'),
 					_1: {ctor: '[]'}
 				}),
-			_1: {ctor: '[]'}
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$id('audiocontainer'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$button,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$id('record'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(
+										_astroash$elm_spa_boiler_plate$Types$RecordStart('Stringy')),
+									_1: {ctor: '[]'}
+								}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Record'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$button,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$id('stop'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(
+											_astroash$elm_spa_boiler_plate$Types$RecordStop('Stringy')),
+										_1: {ctor: '[]'}
+									}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('Stop'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$div,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$id('soundclips'),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$audio,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$controls(true),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$id('audio'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$src(model.audioMessage),
+														_1: {ctor: '[]'}
+													}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
+						}
+					}),
+				_1: {ctor: '[]'}
+			}
 		});
 };
 
@@ -9806,7 +9931,7 @@ var _astroash$elm_spa_boiler_plate$Main$main = A2(
 			{ctor: '_Tuple2', _0: _astroash$elm_spa_boiler_plate$State$initModel, _1: _elm_lang$core$Platform_Cmd$none}),
 		view: _astroash$elm_spa_boiler_plate$View$view,
 		update: _astroash$elm_spa_boiler_plate$State$update,
-		subscriptions: _elm_lang$core$Basics$always(_elm_lang$core$Platform_Sub$none)
+		subscriptions: _astroash$elm_spa_boiler_plate$State$subscriptions
 	})();
 
 var Elm = {};

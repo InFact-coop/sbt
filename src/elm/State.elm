@@ -1,4 +1,4 @@
-module State exposing (..)
+port module State exposing (..)
 
 import Types exposing (..)
 
@@ -11,6 +11,7 @@ initModel =
     { route = HomeRoute
     , userInput = ""
     , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
+    , audioMessage = ""
     }
 
 
@@ -56,3 +57,26 @@ update msg model =
 
         ToggleIcon classTuple ->
             ( { model | reasonForVisiting = (List.map (\n -> findToggledIcon n classTuple) model.reasonForVisiting) }, Cmd.none )
+
+        RecordStart string ->
+            ( model, recordStart string )
+
+        RecordStop string ->
+            ( model, recordStop string )
+
+        RecieveAudio string ->
+            ( { model | audioMessage = string }, Cmd.none )
+
+
+port recordStart : String -> Cmd msg
+
+
+port recordStop : String -> Cmd msg
+
+
+port audioUrl : (String -> msg) -> Sub msg
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    audioUrl RecieveAudio

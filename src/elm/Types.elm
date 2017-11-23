@@ -17,6 +17,7 @@ type alias Model =
     { route : Route
     , userInput : String
     , reasonForVisiting : List ( String, Bool )
+    , audioMessage : String
     }
 
 
@@ -28,3 +29,6 @@ type Msg
     = Change String
     | UrlChange Navigation.Location
     | ToggleIcon ( String, Bool )
+    | RecordStart String
+    | RecordStop String
+    | RecieveAudio String
