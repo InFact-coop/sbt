@@ -1,4 +1,4 @@
-module State exposing (..)
+port module State exposing (..)
 
 import Types exposing (..)
 
@@ -10,6 +10,8 @@ initModel : Model
 initModel =
     { route = HomeRoute
     , userInput = ""
+    , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
+    , audioMessage = ""
     }
 
 
@@ -23,14 +25,25 @@ getRoute hash =
         "#home" ->
             HomeRoute
 
-        "#pageone" ->
-            PageOneRoute
+        "#secondPage" ->
+            SecondPageRoute
 
         "#pagetwo" ->
             PageTwoRoute
 
+        "#thirdPage" ->
+            ThirdPageRoute
+
         _ ->
             HomeRoute
+
+
+findToggledIcon : ( String, Bool ) -> ( String, Bool ) -> ( String, Bool )
+findToggledIcon ( mappedClass, isMappedToggled ) ( selectedClass, isSelectedToggled ) =
+    if selectedClass == mappedClass then
+        ( mappedClass, not isMappedToggled )
+    else
+        ( mappedClass, isMappedToggled )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -41,3 +54,29 @@ update msg model =
 
         UrlChange location ->
             ( { model | route = (getRoute location.hash) }, Cmd.none )
+
+        ToggleIcon classTuple ->
+            ( { model | reasonForVisiting = (List.map (\n -> findToggledIcon n classTuple) model.reasonForVisiting) }, Cmd.none )
+
+        RecordStart string ->
+            ( model, recordStart string )
+
+        RecordStop string ->
+            ( model, recordStop string )
+
+        RecieveAudio string ->
+            ( { model | audioMessage = string }, Cmd.none )
+
+
+port recordStart : String -> Cmd msg
+
+
+port recordStop : String -> Cmd msg
+
+
+port audioUrl : (String -> msg) -> Sub msg
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    audioUrl RecieveAudio

@@ -8,13 +8,16 @@ import Navigation
 
 type Route
     = HomeRoute
-    | PageOneRoute
+    | SecondPageRoute
     | PageTwoRoute
+    | ThirdPageRoute
 
 
 type alias Model =
     { route : Route
     , userInput : String
+    , reasonForVisiting : List ( String, Bool )
+    , audioMessage : String
     }
 
 
@@ -25,3 +28,7 @@ type alias Model =
 type Msg
     = Change String
     | UrlChange Navigation.Location
+    | ToggleIcon ( String, Bool )
+    | RecordStart String
+    | RecordStop String
+    | RecieveAudio String

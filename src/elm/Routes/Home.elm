@@ -8,7 +8,7 @@ import Types exposing (..)
 
 home : Model -> Html Msg
 home model =
-    div [ class "w-40-ns center main vh-100" ]
+    div [ class "mw6 center main min-h-100" ]
         [ section
             []
             [ h1
@@ -34,6 +34,7 @@ home model =
                 ]
             ]
         , a
-            [ class "db br-100 w10 h10 center bg-bookbug", href "#pagetwo" ]
+            [ class "db br-100 w10 h10 center bg-bookbug", href "#secondPage" ]
             []
+        , audio [] []
         ]

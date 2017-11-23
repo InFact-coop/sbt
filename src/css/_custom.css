@@ -58,9 +58,104 @@ h1 {
   height: var(--height-10);
 }
 
+/* Icon Stuff */
+
+.iconGrid {
+  display: grid;
+  /*justify-items: center;*/
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr 4fr 4fr;
+  align-items: center;
+}
+
 .bg-bookbug {
   background:url('assets/bookbug.png') no-repeat;
   background-color: white;
   background-size: 80%;
   background-position: center;
 }
+
+.school-trip {
+  background:url('assets/schoolTrip.svg') no-repeat;
+  background-color: rgba(44, 106, 138, 0.09);
+  background-size: 60%;
+  background-position: center;
+}
+
+.school-trip-checked {
+  background:url('assets/schoolTrip-checked.svg') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}
+
+.borrow-a-book {
+  background:url('assets/book.svg') no-repeat;
+  background-color: rgba(44, 106, 138, 0.09);
+  background-size: 60%;
+  background-position: center;
+}
+
+.borrow-a-book-checked {
+  background:url('assets/book-checked.svg') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}
+
+.use-a-computer {
+  background:url('assets/computer.svg') no-repeat;
+  background-color: rgba(44, 106, 138, 0.09);
+  background-size: 60%;
+  background-position: center;
+}
+
+.use-a-computer-checked {
+  background:url('assets/computer-checked.svg') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}
+
+.wifi {
+  background:url('assets/wifi.svg') no-repeat;
+  background-color: rgba(44, 106, 138, 0.09);
+  background-size: 60%;
+  background-position: center;
+}
+
+.wifi-checked {
+  background:url('assets/wifi-checked.svg') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}
+
+.event {
+  background:url('assets/event.svg') no-repeat;
+  background-color: rgba(44, 106, 138, 0.09);
+  background-size: 60%;
+  background-position: center;
+}
+
+.event-checked {
+  background:url('assets/event-checked.svg') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}
+
+.bookbug {
+  background:url('assets/question.svg') no-repeat;
+  background-color: rgba(44, 106, 138, 0.09);
+  background-size: 60%;
+  background-position: center;
+}
+
+.bookbug-checked {
+  background:url('assets/question-checked.svg') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 60%;
+  background-position: center;
+}
+
