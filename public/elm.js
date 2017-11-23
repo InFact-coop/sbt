@@ -9506,7 +9506,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (_p3)
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('dib iconContainer ma3'),
+			_0: _elm_lang$html$Html_Attributes$class('flex flex-column iconContainer ma3 tc center'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9556,7 +9556,22 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (_p3)
 						}
 					},
 					{ctor: '[]'}),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$caption,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('caption f4 tc pt2 ma2'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('school trip'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
 			}
 		});
 };

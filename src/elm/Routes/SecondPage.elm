@@ -33,10 +33,11 @@ isChecked ( iconClass, isToggled ) =
 
 createIcon : ( String, Bool ) -> Html Msg
 createIcon ( iconClass, isToggled ) =
-    div [ class "dib iconContainer ma3" ]
+    div [ class "flex flex-column iconContainer ma3 tc center" ]
         [ input [ type_ "checkbox", class "dn", name "icon", id "icon" ]
             []
         , label [ class <| isChecked ( iconClass, isToggled ) ++ " dib br-100 h5 w5 icon", for "icon", onClick (ToggleIcon ( iconClass, isToggled )) ] []
+        , caption [ class "caption f4 tc pt2 ma2" ] [ text "school trip" ]
         ]
 
 

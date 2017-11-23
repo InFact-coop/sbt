@@ -62,9 +62,10 @@ h1 {
 
 .iconGrid {
   display: grid;
+  /*justify-items: center;*/
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
   grid-template-rows: 4fr 4fr 4fr;
+  align-items: center;
 }
 
 .bg-bookbug {
@@ -157,3 +158,4 @@ h1 {
   background-size: 60%;
   background-position: center;
 }
+
