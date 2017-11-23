@@ -57,3 +57,16 @@ h1 {
 .h10 {
   height: var(--height-10);
 }
+
+.checkbox {
+  display: none;
+}
+
+.checkbox-label {
+  display: inline-block;
+  padding: 0;
+  background:url("../assets/schoolTrip.svg");
+  height: 125px;
+  width: 125px;
+  background-size: 50%;
+}

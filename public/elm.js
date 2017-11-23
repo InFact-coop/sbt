@@ -12763,7 +12763,7 @@ var _astroash$elm_spa_boiler_plate$Types$Model = F2(
 		return {route: a, userInput: b};
 	});
 var _astroash$elm_spa_boiler_plate$Types$PageTwoRoute = {ctor: 'PageTwoRoute'};
-var _astroash$elm_spa_boiler_plate$Types$PageOneRoute = {ctor: 'PageOneRoute'};
+var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
 var _astroash$elm_spa_boiler_plate$Types$UrlChange = function (a) {
 	return {ctor: 'UrlChange', _0: a};
@@ -12777,8 +12777,8 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 	switch (_p0) {
 		case '#home':
 			return _astroash$elm_spa_boiler_plate$Types$HomeRoute;
-		case '#pageone':
-			return _astroash$elm_spa_boiler_plate$Types$PageOneRoute;
+		case '#secondPage':
+			return _astroash$elm_spa_boiler_plate$Types$SecondPageRoute;
 		case '#pagetwo':
 			return _astroash$elm_spa_boiler_plate$Types$PageTwoRoute;
 		default:
@@ -13393,40 +13393,122 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 		});
 };
 
-var _astroash$elm_spa_boiler_plate$Routes_PageOne$pageOne = function (model) {
+var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('w-60-ns center'),
+			_0: _elm_lang$html$Html_Attributes$class('center'),
 			_1: {ctor: '[]'}
 		},
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$h1,
+				_elm_lang$html$Html$section,
+				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('tc f1'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('hello'),
+					_0: A2(
+						_elm_lang$html$Html$h1,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('tc f3'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('What brings you here?'),
+							_1: {ctor: '[]'}
+						}),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$p,
+					_elm_lang$html$Html$li,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('f3 w60 mh1 tc'),
+						_0: _elm_lang$html$Html_Attributes$class('h10 bg-white'),
 						_1: {ctor: '[]'}
 					},
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html$text('Welcome to Page One'),
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{ctor: '[]'},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$input,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('checkbox'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$type_('checkbox'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$name('thing'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$value('thing'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$id('thing'),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									},
+									{
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$label,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('checkbox-label'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$for('thing'),
+													_1: {ctor: '[]'}
+												}
+											},
+											{
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$img,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('tc-ns w-50 h-50 margin-0-auto pb2 db mt3'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$src('https://media.tenor.com/images/5fa65c8c2585f629b9814fed5a802ef8/tenor.gif'),
+															_1: {ctor: '[]'}
+														}
+													},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('tc'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html$text('text'),
+																_1: {ctor: '[]'}
+															}),
+														_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}),
 						_1: {ctor: '[]'}
 					}),
 				_1: {ctor: '[]'}
@@ -13514,7 +13596,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbarContent = A2(
 		_0: {ctor: '_Tuple2', _0: 'home', _1: 'Home'},
 		_1: {
 			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'pageone', _1: 'Page One'},
+			_0: {ctor: '_Tuple2', _0: 'secondPage', _1: 'What brings you here?'},
 			_1: {
 				ctor: '::',
 				_0: {ctor: '_Tuple2', _0: 'pagetwo', _1: 'Page Two'},
@@ -13539,8 +13621,8 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 		switch (_p0.ctor) {
 			case 'HomeRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_Home$home(model);
-			case 'PageOneRoute':
-				return _astroash$elm_spa_boiler_plate$Routes_PageOne$pageOne(model);
+			case 'SecondPageRoute':
+				return _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage(model);
 			default:
 				return _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo(model);
 		}

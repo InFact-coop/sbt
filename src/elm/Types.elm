@@ -8,7 +8,7 @@ import Navigation
 
 type Route
     = HomeRoute
-    | PageOneRoute
+    | SecondPageRoute
     | PageTwoRoute
 
 

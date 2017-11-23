@@ -23,8 +23,8 @@ getRoute hash =
         "#home" ->
             HomeRoute
 
-        "#pageone" ->
-            PageOneRoute
+        "#secondPage" ->
+            SecondPageRoute
 
         "#pagetwo" ->
             PageTwoRoute
