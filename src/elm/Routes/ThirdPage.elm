@@ -11,6 +11,7 @@ thirdPage model =
     div [ class "center main mw6 min-h-100" ]
         [ h1 [ class "tc f3 pa5 ma2" ]
             [ text "What's your story?" ]
+        , div [ class "mic ba bw2 red b--red br-pill pa4 pl5 tc mw5half half center" ] [ text "TELL US" ]
         , div [ id "audiocontainer" ]
             -- get rid of string
             [ button [ id "record", onClick (RecordStart "Stringy") ]

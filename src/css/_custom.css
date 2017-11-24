@@ -159,3 +159,27 @@ h1 {
   background-position: center;
 }
 
+.mic {
+  background:url('assets/mic.svg') no-repeat;
+  background-size: 13%;
+  background-position: 14% center;
+}
+
+.mic-checked {
+  background:url('assets/mic-checked.svg') no-repeat;
+  background-color: var(--red);
+  background-size: 14%;
+  background-position: left center;
+}
+
+
+.bg-brand {
+  background-color: var(--brand-teal);
+}
+.brand {
+  color: var(--brand-teal);
+}
+
+.mw5half {
+  max-width: var(--max-width-5half);
+}
