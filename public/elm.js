@@ -9773,7 +9773,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model)
 					_elm_lang$html$Html$div,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('mic ba bw2 red b--red br-pill pa4 pl5 tc mw5half half center'),
+						_0: _elm_lang$html$Html_Attributes$class('mic ba bw2 red b--red br-pill pa4 pl5 tc mw5half center mb5'),
 						_1: {ctor: '[]'}
 					},
 					{
@@ -9787,81 +9787,96 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model)
 						_elm_lang$html$Html$div,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$id('audiocontainer'),
+							_0: _elm_lang$html$Html_Attributes$class('write ba bw2 brand b--brand br-pill pa4 pl5 tc mw5half center'),
 							_1: {ctor: '[]'}
 						},
 						{
 							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$button,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$id('record'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_astroash$elm_spa_boiler_plate$Types$RecordStart('Stringy')),
-										_1: {ctor: '[]'}
-									}
-								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('Record'),
-									_1: {ctor: '[]'}
-								}),
-							_1: {
+							_0: _elm_lang$html$Html$text('WRITE US'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$id('audiocontainer'),
+								_1: {ctor: '[]'}
+							},
+							{
 								ctor: '::',
 								_0: A2(
 									_elm_lang$html$Html$button,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$id('stop'),
+										_0: _elm_lang$html$Html_Attributes$id('record'),
 										_1: {
 											ctor: '::',
 											_0: _elm_lang$html$Html_Events$onClick(
-												_astroash$elm_spa_boiler_plate$Types$RecordStop('Stringy')),
+												_astroash$elm_spa_boiler_plate$Types$RecordStart('Stringy')),
 											_1: {ctor: '[]'}
 										}
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('Stop'),
+										_0: _elm_lang$html$Html$text('Record'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$div,
+										_elm_lang$html$Html$button,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$id('soundclips'),
-											_1: {ctor: '[]'}
+											_0: _elm_lang$html$Html_Attributes$id('stop'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(
+													_astroash$elm_spa_boiler_plate$Types$RecordStop('Stringy')),
+												_1: {ctor: '[]'}
+											}
 										},
 										{
 											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$audio,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$controls(true),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$id('audio'),
-														_1: {
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$src(model.audioMessage),
-															_1: {ctor: '[]'}
-														}
-													}
-												},
-												{ctor: '[]'}),
+											_0: _elm_lang$html$Html$text('Stop'),
 											_1: {ctor: '[]'}
 										}),
-									_1: {ctor: '[]'}
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$id('soundclips'),
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$audio,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$controls(true),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$id('audio'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$src(model.audioMessage),
+																_1: {ctor: '[]'}
+															}
+														}
+													},
+													{ctor: '[]'}),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
 								}
-							}
-						}),
-					_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
 				}
 			}
 		});

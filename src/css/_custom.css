@@ -161,7 +161,7 @@ h1 {
 
 .mic {
   background:url('assets/mic.svg') no-repeat;
-  background-size: 13%;
+  background-size: 14%;
   background-position: 14% center;
 }
 
@@ -172,12 +172,28 @@ h1 {
   background-position: left center;
 }
 
+.write {
+  background:url('assets/write.svg') no-repeat;
+  background-size: 17%;
+  background-position: 11% center;
+}
+
+.write-checked {
+  background:url('assets/write-checked.svg') no-repeat;
+  background-color: var(--brand-teal);
+  background-size: 14%;
+  background-position: left center;
+}
+
 
 .bg-brand {
   background-color: var(--brand-teal);
 }
 .brand {
   color: var(--brand-teal);
+}
+.b--brand {
+  border-color: var(--brand-teal);
 }
 
 .mw5half {
