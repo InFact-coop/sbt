@@ -6,9 +6,6 @@ import Html.Attributes exposing (..)
 import Types exposing (..)
 
 
---
-
-
 reviewPage : Model -> Html Msg
 reviewPage model =
     div [ class <| "center main mw6 homeContainer mh-100 " ++ (hasChanged model) ]

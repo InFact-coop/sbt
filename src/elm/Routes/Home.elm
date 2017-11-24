@@ -8,11 +8,11 @@ import Types exposing (..)
 
 home : Model -> Html Msg
 home model =
-    div [ class "homeContainer mw6 center main min-h-100" ]
+    div [ class "mw6 center main min-h-100" ]
         [ section
             []
             [ h1
-                [ class "tc ma0 pt2 b" ]
+                [ class "tc ma0 pt5 b" ]
                 [ span
                     [ class "db" ]
                     [ text "Hi, " ]
@@ -24,7 +24,7 @@ home model =
         , section
             []
             [ h2
-                [ class "tc pt2 f3" ]
+                [ class "tc pt4 f3" ]
                 [ span
                     [ class "db" ]
                     [ text "Choose your" ]
