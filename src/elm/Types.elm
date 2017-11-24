@@ -14,10 +14,23 @@ type Route
     | SentRoute
 
 
+type Message
+    = Audio
+    | Text
+    | Video
+
+
+type Stage
+    = Stage0
+    | Stage1
+    | Stage2
+
+
 type alias Model =
     { route : Route
     , userInput : String
     , reasonForVisiting : List ( String, Bool )
+    , messageType : List ( Message, Stage )
     , audioMessage : String
     }
 
@@ -27,9 +40,11 @@ type alias Model =
 
 
 type Msg
-    = Change String
-    | UrlChange Navigation.Location
+    = UrlChange Navigation.Location
     | ToggleIcon ( String, Bool )
     | RecordStart String
     | RecordStop String
     | RecieveAudio String
+    | ToggleAudio ( Message, Stage )
+    | ToggleVideo ( Message, Stage )
+    | ToggleText ( Message, Stage )

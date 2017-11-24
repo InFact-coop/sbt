@@ -169,7 +169,7 @@ h1 {
   background:url('assets/mic-checked.svg') no-repeat;
   background-color: var(--red);
   background-size: 14%;
-  background-position: left center;
+  background-position: 14% center;
 }
 
 .write {
@@ -181,8 +181,8 @@ h1 {
 .write-checked {
   background:url('assets/write-checked.svg') no-repeat;
   background-color: var(--brand-teal);
-  background-size: 14%;
-  background-position: left center;
+  background-size: 17%;
+  background-position: 11% center;
 }
 
 .sent {
@@ -190,6 +190,12 @@ h1 {
   background-color: var(--red);
   background-size: 80%;
   background-position: center;
+}
+
+.send {
+  background:url('assets/send.svg') no-repeat;
+  background-size: 17%;
+  background-position: 11% center;
 }
 
 

@@ -11,17 +11,91 @@ thirdPage model =
     div [ class "center main mw6 min-h-100 mh-100" ]
         [ h1 [ class "tc f3 pa5 ma2" ]
             [ text "What's your story?" ]
-        , div [ class "mic ba bw2 red b--red br-pill pa4 pl5 tc mw5half center mb5" ] [ text "TELL US" ]
-        , div [ class "write ba bw2 brand b--brand br-pill pa4 pl5 tc mw5half center" ] [ text "WRITE US" ]
+        , makeIcons model
         , div [ id "audiocontainer" ]
-            -- get rid of string
-            [ button [ id "record", onClick (RecordStart "Stringy") ]
-                [ text "Record" ]
-            , button [ id "stop", onClick (RecordStop "Stringy") ]
-                [ text "Stop" ]
-            , div [ id "soundclips" ]
+            [ div [ id "soundclips" ]
                 [ audio [ controls True, id "audio", src model.audioMessage ]
                     []
                 ]
             ]
         ]
+
+
+makeIcons : Model -> Html Msg
+makeIcons model =
+    section [ class "recordIcons" ]
+        (List.map
+            makeIcon
+            model.messageType
+        )
+
+
+makeIcon : ( Message, Stage ) -> Html Msg
+makeIcon ( message, stage ) =
+    div [ class <| (messageToClass ( message, stage )) ++ " pointer ba bw2 br-pill pa4 pl5 tc mw5half center mb5", onClick (messageToMsg ( message, stage )) ] [ text <| messageToText ( message, stage ) ]
+
+
+messageToMsg : ( Message, Stage ) -> Msg
+messageToMsg ( message, int ) =
+    case message of
+        Audio ->
+            ToggleAudio ( message, int )
+
+        Text ->
+            ToggleText ( message, int )
+
+        Video ->
+            ToggleVideo ( message, int )
+
+
+messageToText : ( Message, Stage ) -> String
+messageToText ( message, stage ) =
+    case ( message, stage ) of
+        ( Audio, Stage1 ) ->
+            "0:00"
+
+        ( Audio, Stage2 ) ->
+            "SEND IT"
+
+        ( Audio, Stage0 ) ->
+            "TELL US"
+
+        ( Video, Stage0 ) ->
+            "SHOW US"
+
+        ( Video, Stage1 ) ->
+            "0:00"
+
+        ( Text, Stage0 ) ->
+            "WRITE US"
+
+        ( Text, Stage1 ) ->
+            "WRITE US"
+
+        ( Text, Stage2 ) ->
+            "SEND IT"
+
+        _ ->
+            ""
+
+
+messageToClass : ( Message, Stage ) -> String
+messageToClass ( message, stage ) =
+    case ( message, stage ) of
+        ( Audio, Stage0 ) ->
+            "mic red b--red"
+
+        ( Audio, Stage1 ) ->
+            "mic-checked bg--red b--red white"
+
+        ( Audio, Stage2 ) ->
+            "send red b--red"
+
+        ( Text, Stage0 ) ->
+            "write brand b--brand"
+
+        ( Text, Stage1 ) ->
+            "write-checked bg-brand b--brand white"
+
+        _ ->
+            "dn"

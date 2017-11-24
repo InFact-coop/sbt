@@ -11,6 +11,7 @@ initModel =
     { route = HomeRoute
     , userInput = ""
     , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
+    , messageType = [ ( Audio, Stage0 ), ( Video, Stage0 ), ( Text, Stage0 ) ]
     , audioMessage = ""
     }
 
@@ -49,12 +50,25 @@ findToggledIcon ( mappedClass, isMappedToggled ) ( selectedClass, isSelectedTogg
         ( mappedClass, isMappedToggled )
 
 
+findToggledMessage : Message -> ( Message, Stage ) -> ( Message, Stage )
+findToggledMessage message ( mappedMessage, mappedStage ) =
+    if mappedMessage == message then
+        case mappedStage of
+            Stage0 ->
+                ( mappedMessage, Stage1 )
+
+            Stage1 ->
+                ( mappedMessage, Stage2 )
+
+            Stage2 ->
+                ( mappedMessage, Stage0 )
+    else
+        ( mappedMessage, mappedStage )
+
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Change newInput ->
-            ( { model | userInput = newInput }, Cmd.none )
-
         UrlChange location ->
             ( { model | route = (getRoute location.hash) }, Cmd.none )
 
@@ -69,6 +83,39 @@ update msg model =
 
         RecieveAudio string ->
             ( { model | audioMessage = string }, Cmd.none )
+
+        ToggleAudio ( message, stage ) ->
+            case stage of
+                Stage2 ->
+                    ( { model | route = SentRoute, messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
+
+                Stage1 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, recordStop "yes" )
+
+                Stage0 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, recordStart "yes" )
+
+        ToggleText ( message, stage ) ->
+            case stage of
+                Stage2 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
+
+                Stage1 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
+
+                Stage0 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
+
+        ToggleVideo ( message, stage ) ->
+            case stage of
+                Stage2 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
+
+                Stage1 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
+
+                Stage0 ->
+                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
 
 
 port recordStart : String -> Cmd msg
