@@ -1,0 +1,18 @@
+<svg width="48" height="65" viewBox="0 0 48 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>question</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(261 2053)">
+<g id="question">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-261 -2053)" fill="#00B5D6"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(-243.428 -2000.38)" fill="#00B5D6"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 23.6842 9.21831C 31.7063 9.21831 38.2003 15.7479 38.2003 23.814C 38.2003 31.88 31.7063 38.4096 23.6842 38.4096L 19.1002 38.4096L 19.1002 49.9325L 28.2683 49.9325L 28.2683 47.167C 39.1172 45.0161 47.3684 35.3369 47.3684 23.814C 47.3684 10.6779 36.7487 0 23.6842 0C 10.6197 0 0 10.6779 0 23.814L 9.16808 23.814C 9.16808 15.7479 15.6621 9.21831 23.6842 9.21831Z"/>
+<path id="path1_fill" d="M 6.11205 12.2911C 9.48765 12.2911 12.2241 9.53963 12.2241 6.14554C 12.2241 2.75145 9.48765 0 6.11205 0C 2.73646 0 0 2.75145 0 6.14554C 0 9.53963 2.73646 12.2911 6.11205 12.2911Z"/>
+</defs>
+</svg>
