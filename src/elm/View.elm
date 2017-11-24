@@ -10,6 +10,7 @@ import Types exposing (..)
 import Routes.Home exposing (..)
 import Routes.SecondPage exposing (..)
 import Routes.PageTwo exposing (..)
+import Routes.Sent exposing (..)
 import Routes.ThirdPage exposing (..)
 import Routes.Navbar exposing (..)
 
@@ -30,6 +31,9 @@ view model =
 
                 ThirdPageRoute ->
                     thirdPage model
+
+                SentRoute ->
+                    sent model
     in
         div [ class "" ]
             [ navbar model

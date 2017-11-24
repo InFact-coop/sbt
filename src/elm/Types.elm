@@ -11,6 +11,7 @@ type Route
     | SecondPageRoute
     | PageTwoRoute
     | ThirdPageRoute
+    | SentRoute
 
 
 type alias Model =

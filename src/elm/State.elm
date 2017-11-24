@@ -34,6 +34,9 @@ getRoute hash =
         "#thirdPage" ->
             ThirdPageRoute
 
+        "#sent" ->
+            SentRoute
+
         _ ->
             HomeRoute
 

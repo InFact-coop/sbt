@@ -185,6 +185,13 @@ h1 {
   background-position: left center;
 }
 
+.sent {
+  background:url('assets/sent.svg') no-repeat;
+  background-color: var(--red);
+  background-size: 80%;
+  background-position: center;
+}
+
 
 .bg-brand {
   background-color: var(--brand-teal);
@@ -198,4 +205,12 @@ h1 {
 
 .mw5half {
   max-width: var(--max-width-5half);
+}
+
+.sans {
+  font-family: var(--sans-serif);
+}
+
+.mh-100 {
+  min-height: 100vh;
 }

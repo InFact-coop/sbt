@@ -8,7 +8,7 @@ import Types exposing (..)
 
 home : Model -> Html Msg
 home model =
-    div [ class "mw6 center main min-h-100" ]
+    div [ class "mw6 center main min-h-100 mh-100" ]
         [ section
             []
             [ h1

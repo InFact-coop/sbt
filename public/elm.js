@@ -8803,6 +8803,7 @@ var _astroash$elm_spa_boiler_plate$Types$Model = F4(
 	function (a, b, c, d) {
 		return {route: a, userInput: b, reasonForVisiting: c, audioMessage: d};
 	});
+var _astroash$elm_spa_boiler_plate$Types$SentRoute = {ctor: 'SentRoute'};
 var _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute = {ctor: 'ThirdPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$PageTwoRoute = {ctor: 'PageTwoRoute'};
 var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
@@ -8845,6 +8846,8 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 			return _astroash$elm_spa_boiler_plate$Types$PageTwoRoute;
 		case '#thirdPage':
 			return _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute;
+		case '#sent':
+			return _astroash$elm_spa_boiler_plate$Types$SentRoute;
 		default:
 			return _astroash$elm_spa_boiler_plate$Types$HomeRoute;
 	}
@@ -9423,7 +9426,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('mw6 center main min-h-100'),
+			_0: _elm_lang$html$Html_Attributes$class('mw6 center main min-h-100 mh-100'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9653,7 +9656,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100'),
+			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100 mh-100'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9745,12 +9748,49 @@ var _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo = function (model) {
 		});
 };
 
+var _astroash$elm_spa_boiler_plate$Routes_Sent$sent = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('mw6 center min-h-100 bg-red white tc mh-100 pv5'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('mw5half sent w10 h10 center pv5'),
+					_1: {ctor: '[]'}
+				},
+				{ctor: '[]'}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$h1,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('sans ma0 f1 pv5'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Thanks!'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			}
+		});
+};
+
 var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100'),
+			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100 mh-100'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9950,8 +9990,10 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 				return _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage(model);
 			case 'PageTwoRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo(model);
-			default:
+			case 'ThirdPageRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage(model);
+			default:
+				return _astroash$elm_spa_boiler_plate$Routes_Sent$sent(model);
 		}
 	}();
 	return A2(
