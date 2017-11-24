@@ -9423,7 +9423,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('mw6 center main min-h-100'),
+			_0: _elm_lang$html$Html_Attributes$class('homeContainer mw6 center main min-h-100'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9437,7 +9437,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 						_elm_lang$html$Html$h1,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt5 b'),
+							_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt2 b'),
 							_1: {ctor: '[]'}
 						},
 						{
@@ -9484,7 +9484,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 							_elm_lang$html$Html$h2,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('tc pt4 f3'),
+								_0: _elm_lang$html$Html_Attributes$class('tc pt2 f3'),
 								_1: {ctor: '[]'}
 							},
 							{
@@ -9515,7 +9515,55 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 											_0: _elm_lang$html$Html$text('avatar'),
 											_1: {ctor: '[]'}
 										}),
-									_1: {ctor: '[]'}
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('corner-right'),
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$a,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$href('#secondPage'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('corner-right-triangle'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$p,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('white f4 fr pt3 pr2'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html$text('2'),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {ctor: '[]'}
+															}),
+														_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
 								}
 							}),
 						_1: {ctor: '[]'}
