@@ -4,12 +4,13 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Types exposing (..)
+import Time exposing (Time, second)
 
 
 thirdPage : Model -> Html Msg
 thirdPage model =
     div [ class "center main" ]
-        [ h1 [ class "tc f3 pa3 ma2" ]
+        [ h1 [ class "tc f3 pa3 ma4" ]
             [ text "What's your story?" ]
         , makeIcons model
         ]
@@ -19,14 +20,14 @@ makeIcons : Model -> Html Msg
 makeIcons model =
     section [ class "recordIcons" ]
         (List.map
-            makeIcon
+            (\x -> makeIcon x model)
             model.messageType
         )
 
 
-makeIcon : ( Message, Stage ) -> Html Msg
-makeIcon ( message, stage ) =
-    div [ class <| (messageToClass ( message, stage )) ++ " pointer ba bw2 br-pill pa4 pl5 tc mw5half center mv5", onClick (messageToMsg ( message, stage )) ] [ text <| messageToText ( message, stage ) ]
+makeIcon : ( Message, Stage ) -> Model -> Html Msg
+makeIcon ( message, stage ) model =
+    div [ class <| (messageToClass ( message, stage )) ++ " pointer ba bw2 br-pill pa4 pl5 tc mw5half center mv5", onClick (messageToMsg ( message, stage )) ] [ text <| messageToText ( message, stage ) model ]
 
 
 messageToMsg : ( Message, Stage ) -> Msg
@@ -42,11 +43,11 @@ messageToMsg ( message, int ) =
             ToggleVideo ( message, int )
 
 
-messageToText : ( Message, Stage ) -> String
-messageToText ( message, stage ) =
+messageToText : ( Message, Stage ) -> Model -> String
+messageToText ( message, stage ) model =
     case ( message, stage ) of
         ( Audio, Stage1 ) ->
-            "0:00"
+            toString model.messageLength ++ "s"
 
         ( Audio, Stage2 ) ->
             "SEND IT"
@@ -90,6 +91,9 @@ messageToClass ( message, stage ) =
 
         ( Text, Stage1 ) ->
             "write-checked bg-brand b--brand white"
+
+        ( Text, Stage2 ) ->
+            "write brand b--brand"
 
         _ ->
             "dn"

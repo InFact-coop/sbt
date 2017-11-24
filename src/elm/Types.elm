@@ -1,6 +1,7 @@
 module Types exposing (..)
 
 import Navigation
+import Time exposing (Time, second)
 
 
 -- Model
@@ -32,6 +33,8 @@ type alias Model =
     , reasonForVisiting : List ( String, Bool )
     , messageType : List ( Message, Stage )
     , audioMessage : String
+    , messageLength : Int
+    , paused : Bool
     }
 
 
@@ -48,3 +51,4 @@ type Msg
     | ToggleAudio ( Message, Stage )
     | ToggleVideo ( Message, Stage )
     | ToggleText ( Message, Stage )
+    | Increment

@@ -9,7 +9,7 @@ import Types exposing (..)
 secondPage : Model -> Html Msg
 secondPage model =
     div [ class "center main flex flex-column" ]
-        [ section [] [ h1 [ class "tc f3 pa3 ma2" ] [ text "What brings you here?" ] ]
+        [ section [] [ h1 [ class "tc f3 pa3 ma4" ] [ text "What brings you here?" ] ]
         , createIcons model
         , a [ href "#thirdPage", class "link brand db w5 h5 bg-white br-100 center f4 tc" ] [ text "Next >" ]
         ]

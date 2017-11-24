@@ -1,6 +1,7 @@
 port module State exposing (..)
 
 import Types exposing (..)
+import Time exposing (Time, second)
 
 
 -- MODEL
@@ -13,6 +14,8 @@ initModel =
     , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
     , messageType = [ ( Audio, Stage0 ), ( Video, Stage0 ), ( Text, Stage0 ) ]
     , audioMessage = ""
+    , messageLength = 0
+    , paused = True
     }
 
 
@@ -69,6 +72,9 @@ findToggledMessage message ( mappedMessage, mappedStage ) =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        Increment ->
+            ( { model | messageLength = model.messageLength + 1 }, Cmd.none )
+
         UrlChange location ->
             ( { model | route = (getRoute location.hash) }, Cmd.none )
 
@@ -87,13 +93,13 @@ update msg model =
         ToggleAudio ( message, stage ) ->
             case stage of
                 Stage2 ->
-                    ( { model | route = SentRoute, messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
+                    ( { model | messageLength = 0, route = SentRoute, messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
 
                 Stage1 ->
-                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, recordStop "yes" )
+                    ( { model | paused = True, messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, recordStop "yes" )
 
                 Stage0 ->
-                    ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, recordStart "yes" )
+                    ( { model | paused = False, messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, recordStart "yes" )
 
         ToggleText ( message, stage ) ->
             case stage of
@@ -129,4 +135,10 @@ port audioUrl : (String -> msg) -> Sub msg
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    audioUrl RecieveAudio
+    Sub.batch
+        [ audioUrl RecieveAudio
+        , if not model.paused then
+            Time.every second (always Increment)
+          else
+            Sub.none
+        ]
