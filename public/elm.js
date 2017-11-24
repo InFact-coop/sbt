@@ -9812,6 +9812,165 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 		});
 };
 
+var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$lightStar = function (model) {
+	var starIterator = F2(
+		function (rating, mappedStar) {
+			return (_elm_lang$core$Native_Utils.cmp(rating, mappedStar) > -1) ? A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('dib'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$input,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									'rating-',
+									_elm_lang$core$Basics$toString(mappedStar))),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$name('rating'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('radio'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$value(
+											_elm_lang$core$Basics$toString(mappedStar)),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('dn'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(
+													_astroash$elm_spa_boiler_plate$Types$YellowStarClass(mappedStar)),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$label,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$for(
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										'rating-',
+										_elm_lang$core$Basics$toString(mappedStar))),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('star-checked'),
+									_1: {ctor: '[]'}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}
+				}) : A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('dib'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$input,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$id(
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									'rating-',
+									_elm_lang$core$Basics$toString(mappedStar))),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$name('rating'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$type_('radio'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$value(
+											_elm_lang$core$Basics$toString(mappedStar)),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('dn'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(
+													_astroash$elm_spa_boiler_plate$Types$YellowStarClass(mappedStar)),
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$label,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$for(
+									A2(
+										_elm_lang$core$Basics_ops['++'],
+										'rating-',
+										_elm_lang$core$Basics$toString(mappedStar))),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('star'),
+									_1: {ctor: '[]'}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}
+				});
+		});
+	var stars = {
+		ctor: '::',
+		_0: 1,
+		_1: {
+			ctor: '::',
+			_0: 2,
+			_1: {
+				ctor: '::',
+				_0: 3,
+				_1: {
+					ctor: '::',
+					_0: 4,
+					_1: {
+						ctor: '::',
+						_0: 5,
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	};
+	return A2(
+		_elm_lang$core$List$map,
+		function (n) {
+			return A2(starIterator, model.starClass, n);
+		},
+		stars);
+};
 var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
@@ -9826,7 +9985,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage = function (mode
 				_elm_lang$html$Html$h1,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('tc f3'),
+					_0: _elm_lang$html$Html_Attributes$class('tc f3 pt6'),
 					_1: {ctor: '[]'}
 				},
 				{
@@ -9840,7 +9999,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage = function (mode
 					_elm_lang$html$Html$form,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('star-rating center pl2'),
+						_0: _elm_lang$html$Html_Attributes$class('star-rating center pl2 tc pt4'),
 						_1: {ctor: '[]'}
 					},
 					{
@@ -9861,222 +10020,60 @@ var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage = function (mode
 										_0: _elm_lang$html$Html_Attributes$class('star-group'),
 										_1: {ctor: '[]'}
 									},
-									{
-										ctor: '::',
-										_0: A2(
-											_elm_lang$html$Html$input,
-											{
-												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$id('rating-1'),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$name('rating'),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$type_('radio'),
-														_1: {
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$value('1'),
-															_1: {ctor: '[]'}
-														}
-													}
-												}
-											},
-											{ctor: '[]'}),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$label,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$for('rating-1'),
-													_1: {
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('ratedStar'),
-														_1: {ctor: '[]'}
-													}
-												},
-												{ctor: '[]'}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$input,
-													{
-														ctor: '::',
-														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'checked', 'checked'),
-														_1: {
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$id('rating-2'),
-															_1: {
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$name('rating'),
-																_1: {
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$type_('radio'),
-																	_1: {
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$value('2'),
-																		_1: {
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('ratedInput dn'),
-																			_1: {ctor: '[]'}
-																		}
-																	}
-																}
-															}
-														}
-													},
-													{ctor: '[]'}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$label,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$for('rating-2'),
-															_1: {
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('ratedStar'),
-																_1: {ctor: '[]'}
-															}
-														},
-														{ctor: '[]'}),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$input,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$id('rating-3'),
-																_1: {
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$name('rating'),
-																	_1: {
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$type_('radio'),
-																		_1: {
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$value('3'),
-																			_1: {
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('ratedInput dn'),
-																				_1: {ctor: '[]'}
-																			}
-																		}
-																	}
-																}
-															},
-															{ctor: '[]'}),
-														_1: {
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$label,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$for('rating-3'),
-																	_1: {
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('ratedStar'),
-																		_1: {ctor: '[]'}
-																	}
-																},
-																{ctor: '[]'}),
-															_1: {
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$input,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$id('rating-4'),
-																		_1: {
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$name('rating'),
-																			_1: {
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$type_('radio'),
-																				_1: {
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$value('4'),
-																					_1: {
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('ratedInput dn'),
-																						_1: {ctor: '[]'}
-																					}
-																				}
-																			}
-																		}
-																	},
-																	{ctor: '[]'}),
-																_1: {
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$label,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$for('rating-4'),
-																			_1: {
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('ratedStar'),
-																				_1: {ctor: '[]'}
-																			}
-																		},
-																		{ctor: '[]'}),
-																	_1: {
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$input,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$id('rating-5'),
-																				_1: {
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$name('rating'),
-																					_1: {
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$type_('radio'),
-																						_1: {
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$value('5'),
-																							_1: {
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$class('ratedInput dn'),
-																								_1: {ctor: '[]'}
-																							}
-																						}
-																					}
-																				}
-																			},
-																			{ctor: '[]'}),
-																		_1: {
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html$label,
-																				{
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$for('rating-5'),
-																					_1: {
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('ratedStar'),
-																						_1: {ctor: '[]'}
-																					}
-																				},
-																				{ctor: '[]'}),
-																			_1: {ctor: '[]'}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}),
+									_astroash$elm_spa_boiler_plate$Routes_ReviewPage$lightStar(model)),
 								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
 					}),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('corner-right'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$a,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$href('#thirdPage'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$div,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('corner-right-triangle'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$p,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('white f4 fr pt3 pr2'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('4'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
 			}
 		});
 };
