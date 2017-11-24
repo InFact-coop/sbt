@@ -36,6 +36,9 @@ getRoute hash =
         "#thirdPage" ->
             ThirdPageRoute
 
+        "#storyBoard" ->
+            StoryBoardRoute
+
         _ ->
             HomeRoute
 

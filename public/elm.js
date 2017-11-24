@@ -8803,6 +8803,7 @@ var _astroash$elm_spa_boiler_plate$Types$Model = F6(
 	function (a, b, c, d, e, f) {
 		return {route: a, userInput: b, reasonForVisiting: c, audioMessage: d, showModal: e, starClass: f};
 	});
+var _astroash$elm_spa_boiler_plate$Types$StoryBoardRoute = {ctor: 'StoryBoardRoute'};
 var _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute = {ctor: 'ThirdPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$ReviewPageRoute = {ctor: 'ReviewPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
@@ -8850,6 +8851,8 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 			return _astroash$elm_spa_boiler_plate$Types$ReviewPageRoute;
 		case '#thirdPage':
 			return _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute;
+		case '#storyBoard':
+			return _astroash$elm_spa_boiler_plate$Types$StoryBoardRoute;
 		default:
 			return _astroash$elm_spa_boiler_plate$Types$HomeRoute;
 	}
@@ -9976,7 +9979,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage = function (mode
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100 homeContainer mh-100'),
+			_0: _elm_lang$html$Html_Attributes$class('center main mw6 homeContainer mh-100'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -10185,62 +10188,30 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model)
 		});
 };
 
-var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbarLink = function (_p0) {
-	var _p1 = _p0;
+var _astroash$elm_spa_boiler_plate$Routes_StoryBoard$storyBoard = function (model) {
 	return A2(
-		_elm_lang$html$Html$li,
+		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('list dib ma3'),
+			_0: _elm_lang$html$Html_Attributes$class('center main mw6 homeContainer mh-100'),
 			_1: {ctor: '[]'}
 		},
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$a,
+				_elm_lang$html$Html$h1,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('link dim white b'),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$href(
-							A2(_elm_lang$core$Basics_ops['++'], '/#', _p1._0)),
-						_1: {ctor: '[]'}
-					}
+					_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt2 b'),
+					_1: {ctor: '[]'}
 				},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text(_p1._1),
+					_0: _elm_lang$html$Html$text('Story Board'),
 					_1: {ctor: '[]'}
 				}),
 			_1: {ctor: '[]'}
 		});
-};
-var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbarContent = A2(
-	_elm_lang$core$List$map,
-	_astroash$elm_spa_boiler_plate$Routes_Navbar$navbarLink,
-	{
-		ctor: '::',
-		_0: {ctor: '_Tuple2', _0: 'home', _1: 'Home'},
-		_1: {
-			ctor: '::',
-			_0: {ctor: '_Tuple2', _0: 'secondPage', _1: 'What brings you here?'},
-			_1: {
-				ctor: '::',
-				_0: {ctor: '_Tuple2', _0: 'pagetwo', _1: 'Page Two'},
-				_1: {ctor: '[]'}
-			}
-		}
-	});
-var _astroash$elm_spa_boiler_plate$Routes_Navbar$navbar = function (model) {
-	return A2(
-		_elm_lang$html$Html$ul,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('ma0 bg-white w-100 pa2 dn'),
-			_1: {ctor: '[]'}
-		},
-		{ctor: '[]'});
 };
 
 var _astroash$elm_spa_boiler_plate$View$view = function (model) {
@@ -10253,8 +10224,10 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 				return _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage(model);
 			case 'ReviewPageRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage(model);
-			default:
+			case 'ThirdPageRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage(model);
+			default:
+				return _astroash$elm_spa_boiler_plate$Routes_StoryBoard$storyBoard(model);
 		}
 	}();
 	return A2(
@@ -10266,12 +10239,8 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 		},
 		{
 			ctor: '::',
-			_0: _astroash$elm_spa_boiler_plate$Routes_Navbar$navbar(model),
-			_1: {
-				ctor: '::',
-				_0: page,
-				_1: {ctor: '[]'}
-			}
+			_0: page,
+			_1: {ctor: '[]'}
 		});
 };
 

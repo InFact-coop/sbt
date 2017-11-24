@@ -11,7 +11,7 @@ import Routes.Home exposing (..)
 import Routes.SecondPage exposing (..)
 import Routes.ReviewPage exposing (..)
 import Routes.ThirdPage exposing (..)
-import Routes.Navbar exposing (..)
+import Routes.StoryBoard exposing (..)
 
 
 view : Model -> Html Msg
@@ -30,8 +30,10 @@ view model =
 
                 ThirdPageRoute ->
                     thirdPage model
+
+                StoryBoardRoute ->
+                    storyBoard model
     in
         div [ class "" ]
-            [ navbar model
-            , page
+            [ page
             ]

@@ -11,6 +11,7 @@ type Route
     | SecondPageRoute
     | ReviewPageRoute
     | ThirdPageRoute
+    | StoryBoardRoute
 
 
 type alias Model =

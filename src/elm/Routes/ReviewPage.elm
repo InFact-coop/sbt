@@ -11,7 +11,7 @@ import Types exposing (..)
 
 reviewPage : Model -> Html Msg
 reviewPage model =
-    div [ class "center main mw6 min-h-100 homeContainer mh-100" ]
+    div [ class "center main mw6 homeContainer mh-100" ]
         [ h1 [ class "tc f3 pt6" ] [ text "How would you rate your experience?" ]
         , Html.form [ class "star-rating center pl2 tc pt4" ]
             [ fieldset [ class "bn" ]
