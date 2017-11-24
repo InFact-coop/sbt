@@ -8801,7 +8801,7 @@ _elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/na
 
 var _astroash$elm_spa_boiler_plate$Types$Model = F6(
 	function (a, b, c, d, e, f) {
-		return {route: a, userInput: b, reasonForVisiting: c, audioMessage: d, showModal: e, starClass: f};
+		return {route: a, userInput: b, reasonForVisiting: c, audioMessage: d, starClass: e, backgroundColor: f};
 	});
 var _astroash$elm_spa_boiler_plate$Types$StoryBoardRoute = {ctor: 'StoryBoardRoute'};
 var _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute = {ctor: 'ThirdPageRoute'};
@@ -8811,8 +8811,6 @@ var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
 var _astroash$elm_spa_boiler_plate$Types$YellowStarClass = function (a) {
 	return {ctor: 'YellowStarClass', _0: a};
 };
-var _astroash$elm_spa_boiler_plate$Types$ReviewModal = {ctor: 'ReviewModal'};
-var _astroash$elm_spa_boiler_plate$Types$NextPage = {ctor: 'NextPage'};
 var _astroash$elm_spa_boiler_plate$Types$RecieveAudio = function (a) {
 	return {ctor: 'RecieveAudio', _0: a};
 };
@@ -8886,8 +8884,8 @@ var _astroash$elm_spa_boiler_plate$State$initModel = {
 		}
 	},
 	audioMessage: '',
-	showModal: false,
-	starClass: 0
+	starClass: 0,
+	backgroundColor: false
 };
 var _astroash$elm_spa_boiler_plate$State$recordStart = _elm_lang$core$Native_Platform.outgoingPort(
 	'recordStart',
@@ -8956,28 +8954,12 @@ var _astroash$elm_spa_boiler_plate$State$update = F2(
 						{audioMessage: _p7._0}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
-			case 'NextPage':
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{showModal: true}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
-			case 'ReviewModal':
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{showModal: false}),
-					_1: _elm_lang$core$Platform_Cmd$none
-				};
 			default:
 				return {
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
-						{starClass: _p7._0}),
+						{starClass: _p7._0, backgroundColor: true}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
 		}
@@ -9587,7 +9569,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 																	},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('2'),
+																		_0: _elm_lang$html$Html$text('1'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -9800,7 +9782,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 												},
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html$text('3'),
+													_0: _elm_lang$html$Html$text('2'),
 													_1: {ctor: '[]'}
 												}),
 											_1: {ctor: '[]'}
@@ -9815,6 +9797,9 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 		});
 };
 
+var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$hasChanged = function (model) {
+	return _elm_lang$core$Native_Utils.eq(model.backgroundColor, true) ? 'bg-blue' : '';
+};
 var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$lightStar = function (model) {
 	var starIterator = F2(
 		function (rating, mappedStar) {
@@ -9979,7 +9964,11 @@ var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage = function (mode
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('center main mw6 homeContainer mh-100'),
+			_0: _elm_lang$html$Html_Attributes$class(
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					'center main mw6 homeContainer mh-100 ',
+					_astroash$elm_spa_boiler_plate$Routes_ReviewPage$hasChanged(model))),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -10066,7 +10055,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ReviewPage$reviewPage = function (mode
 												},
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html$text('4'),
+													_0: _elm_lang$html$Html$text('3'),
 													_1: {ctor: '[]'}
 												}),
 											_1: {ctor: '[]'}
@@ -10202,7 +10191,7 @@ var _astroash$elm_spa_boiler_plate$Routes_StoryBoard$storyBoard = function (mode
 				_elm_lang$html$Html$h1,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt2 b'),
+					_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt2 b f3'),
 					_1: {ctor: '[]'}
 				},
 				{

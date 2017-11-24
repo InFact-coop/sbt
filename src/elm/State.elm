@@ -12,8 +12,8 @@ initModel =
     , userInput = ""
     , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
     , audioMessage = ""
-    , showModal = False
     , starClass = 0
+    , backgroundColor = False
     }
 
 
@@ -72,14 +72,8 @@ update msg model =
         RecieveAudio string ->
             ( { model | audioMessage = string }, Cmd.none )
 
-        NextPage ->
-            ( { model | showModal = True }, Cmd.none )
-
-        ReviewModal ->
-            ( { model | showModal = False }, Cmd.none )
-
         YellowStarClass int ->
-            ( { model | starClass = int }, Cmd.none )
+            ( { model | starClass = int, backgroundColor = True }, Cmd.none )
 
 
 port recordStart : String -> Cmd msg

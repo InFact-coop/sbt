@@ -19,8 +19,8 @@ type alias Model =
     , userInput : String
     , reasonForVisiting : List ( String, Bool )
     , audioMessage : String
-    , showModal : Bool
     , starClass : Int
+    , backgroundColor : Bool
     }
 
 
@@ -35,6 +35,4 @@ type Msg
     | RecordStart String
     | RecordStop String
     | RecieveAudio String
-    | NextPage
-    | ReviewModal
     | YellowStarClass Int
