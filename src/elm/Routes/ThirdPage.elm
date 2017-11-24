@@ -43,11 +43,19 @@ messageToMsg ( message, int ) =
             ToggleVideo ( message, int )
 
 
+lessThan10 : Int -> String
+lessThan10 int =
+    if int < 10 then
+        "0"
+    else
+        ""
+
+
 messageToText : ( Message, Stage ) -> Model -> String
 messageToText ( message, stage ) model =
     case ( message, stage ) of
         ( Audio, Stage1 ) ->
-            toString model.messageLength ++ "s"
+            "00:" ++ (lessThan10 model.messageLength) ++ toString model.messageLength
 
         ( Audio, Stage2 ) ->
             "SEND IT"

@@ -73,7 +73,12 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         Increment ->
-            ( { model | messageLength = model.messageLength + 1 }, Cmd.none )
+            if model.messageLength >= 30 then
+                model
+                    |> update
+                        (ToggleAudio ( Audio, Stage1 ))
+            else
+                ( { model | messageLength = model.messageLength + 1 }, Cmd.none )
 
         UrlChange location ->
             ( { model | route = (getRoute location.hash) }, Cmd.none )
