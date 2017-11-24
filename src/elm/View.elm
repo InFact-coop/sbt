@@ -11,6 +11,7 @@ import Routes.Home exposing (..)
 import Routes.SecondPage exposing (..)
 import Routes.Sent exposing (..)
 import Routes.ThirdPage exposing (..)
+import Routes.FourthPage exposing (..)
 import Routes.Navbar exposing (..)
 
 
@@ -27,6 +28,9 @@ view model =
 
                 ThirdPageRoute ->
                     thirdPage model
+
+                FourthPageRoute ->
+                    fourthPage model
 
                 SentRoute ->
                     sent model

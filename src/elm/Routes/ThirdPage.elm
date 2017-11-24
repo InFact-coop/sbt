@@ -12,12 +12,6 @@ thirdPage model =
         [ h1 [ class "tc f3 pa3 ma2" ]
             [ text "What's your story?" ]
         , makeIcons model
-        , div [ id "audiocontainer" ]
-            [ div [ id "soundclips" ]
-                [ audio [ controls True, id "audio", src model.audioMessage ]
-                    []
-                ]
-            ]
         ]
 
 

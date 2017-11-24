@@ -8804,6 +8804,7 @@ var _astroash$elm_spa_boiler_plate$Types$Model = F5(
 		return {route: a, userInput: b, reasonForVisiting: c, messageType: d, audioMessage: e};
 	});
 var _astroash$elm_spa_boiler_plate$Types$SentRoute = {ctor: 'SentRoute'};
+var _astroash$elm_spa_boiler_plate$Types$FourthPageRoute = {ctor: 'FourthPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute = {ctor: 'ThirdPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
@@ -8874,6 +8875,8 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 			return _astroash$elm_spa_boiler_plate$Types$SecondPageRoute;
 		case '#thirdPage':
 			return _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute;
+		case '#fourthPage':
+			return _astroash$elm_spa_boiler_plate$Types$FourthPageRoute;
 		case '#sent':
 			return _astroash$elm_spa_boiler_plate$Types$SentRoute;
 		default:
@@ -10085,48 +10088,74 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model)
 			_1: {
 				ctor: '::',
 				_0: _astroash$elm_spa_boiler_plate$Routes_ThirdPage$makeIcons(model),
-				_1: {
+				_1: {ctor: '[]'}
+			}
+		});
+};
+
+var _astroash$elm_spa_boiler_plate$Routes_FourthPage$fourthPage = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('center main tc'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{
 					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$div,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$id('audiocontainer'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$id('soundclips'),
-									_1: {ctor: '[]'}
-								},
-								{
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$audio,
-										{
+					_0: _elm_lang$html$Html_Attributes$class('tc f3 pa3 ma2'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Story Board'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$id('audiocontainer'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$id('soundclips'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$audio,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$controls(true),
+										_1: {
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$controls(true),
+											_0: _elm_lang$html$Html_Attributes$id('audio'),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$id('audio'),
-												_1: {
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$src(model.audioMessage),
-													_1: {ctor: '[]'}
-												}
+												_0: _elm_lang$html$Html_Attributes$src(model.audioMessage),
+												_1: {ctor: '[]'}
 											}
-										},
-										{ctor: '[]'}),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
 			}
 		});
 };
@@ -10199,6 +10228,8 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 				return _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage(model);
 			case 'ThirdPageRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage(model);
+			case 'FourthPageRoute':
+				return _astroash$elm_spa_boiler_plate$Routes_FourthPage$fourthPage(model);
 			default:
 				return _astroash$elm_spa_boiler_plate$Routes_Sent$sent(model);
 		}

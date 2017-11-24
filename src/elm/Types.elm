@@ -10,6 +10,7 @@ type Route
     = HomeRoute
     | SecondPageRoute
     | ThirdPageRoute
+    | FourthPageRoute
     | SentRoute
 
 
