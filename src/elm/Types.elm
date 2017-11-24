@@ -9,7 +9,6 @@ import Navigation
 type Route
     = HomeRoute
     | SecondPageRoute
-    | PageTwoRoute
     | ThirdPageRoute
 
 
@@ -18,6 +17,7 @@ type alias Model =
     , userInput : String
     , reasonForVisiting : List ( String, Bool )
     , audioMessage : String
+    , showModal : Bool
     }
 
 
@@ -32,3 +32,5 @@ type Msg
     | RecordStart String
     | RecordStop String
     | RecieveAudio String
+    | NextPage
+    | ReviewModal

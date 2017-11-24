@@ -4,13 +4,25 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Types exposing (..)
+import Dialog exposing (..)
+
+
+-- import Utils exposing (..)
 
 
 secondPage : Model -> Html Msg
 secondPage model =
-    div [ class "center main mw6 min-h-100" ]
+    div [ class "center main mw6 min-h-100 homeContainer" ]
         [ section [] [ h1 [ class "tc f3 pa5 ma2" ] [ text "What brings you here?" ] ]
         , createIcons model
+        , div [ class "corner-right" ]
+            [ div [ class "corner-right-triangle", onClick NextPage ] [ p [ class "white f4 fr pt3 pr2" ] [ text "3" ] ] ]
+        , Dialog.view
+            (if model.showModal then
+                Just (modalConfig model)
+             else
+                Nothing
+            )
         ]
 
 
@@ -46,3 +58,20 @@ createIcon ( iconClass, isToggled ) =
 classHelper : String -> String
 classHelper string =
     String.join "-" <| String.words string
+
+
+modalConfig : Model -> Dialog.Config Msg
+modalConfig model =
+    { closeMessage = Just ReviewModal
+    , containerClass = Nothing
+    , header = Just (h3 [] [ text "leave your review" ])
+    , body = Just (text ("5 stars"))
+    , footer =
+        Just
+            (button
+                [ class "btn btn-success"
+                , onClick ReviewModal
+                ]
+                [ text "OK" ]
+            )
+    }

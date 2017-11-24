@@ -12,6 +12,7 @@ initModel =
     , userInput = ""
     , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
     , audioMessage = ""
+    , showModal = False
     }
 
 
@@ -27,9 +28,6 @@ getRoute hash =
 
         "#secondPage" ->
             SecondPageRoute
-
-        "#pagetwo" ->
-            PageTwoRoute
 
         "#thirdPage" ->
             ThirdPageRoute
@@ -66,6 +64,12 @@ update msg model =
 
         RecieveAudio string ->
             ( { model | audioMessage = string }, Cmd.none )
+
+        NextPage ->
+            ( { model | showModal = True }, Cmd.none )
+
+        ReviewModal ->
+            ( { model | showModal = False }, Cmd.none )
 
 
 port recordStart : String -> Cmd msg
