@@ -8,8 +8,8 @@ import Types exposing (..)
 
 thirdPage : Model -> Html Msg
 thirdPage model =
-    div [ class "center main mw6 min-h-100 mh-100" ]
-        [ h1 [ class "tc f3 pa5 ma2" ]
+    div [ class "center main" ]
+        [ h1 [ class "tc f3 pa3 ma2" ]
             [ text "What's your story?" ]
         , makeIcons model
         , div [ id "audiocontainer" ]
@@ -32,7 +32,7 @@ makeIcons model =
 
 makeIcon : ( Message, Stage ) -> Html Msg
 makeIcon ( message, stage ) =
-    div [ class <| (messageToClass ( message, stage )) ++ " pointer ba bw2 br-pill pa4 pl5 tc mw5half center mb5", onClick (messageToMsg ( message, stage )) ] [ text <| messageToText ( message, stage ) ]
+    div [ class <| (messageToClass ( message, stage )) ++ " pointer ba bw2 br-pill pa4 pl5 tc mw5half center mv5", onClick (messageToMsg ( message, stage )) ] [ text <| messageToText ( message, stage ) ]
 
 
 messageToMsg : ( Message, Stage ) -> Msg

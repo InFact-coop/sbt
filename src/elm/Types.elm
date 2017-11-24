@@ -9,7 +9,6 @@ import Navigation
 type Route
     = HomeRoute
     | SecondPageRoute
-    | PageTwoRoute
     | ThirdPageRoute
     | SentRoute
 

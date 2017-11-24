@@ -8805,7 +8805,6 @@ var _astroash$elm_spa_boiler_plate$Types$Model = F5(
 	});
 var _astroash$elm_spa_boiler_plate$Types$SentRoute = {ctor: 'SentRoute'};
 var _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute = {ctor: 'ThirdPageRoute'};
-var _astroash$elm_spa_boiler_plate$Types$PageTwoRoute = {ctor: 'PageTwoRoute'};
 var _astroash$elm_spa_boiler_plate$Types$SecondPageRoute = {ctor: 'SecondPageRoute'};
 var _astroash$elm_spa_boiler_plate$Types$HomeRoute = {ctor: 'HomeRoute'};
 var _astroash$elm_spa_boiler_plate$Types$Video = {ctor: 'Video'};
@@ -8873,8 +8872,6 @@ var _astroash$elm_spa_boiler_plate$State$getRoute = function (hash) {
 			return _astroash$elm_spa_boiler_plate$Types$HomeRoute;
 		case '#secondPage':
 			return _astroash$elm_spa_boiler_plate$Types$SecondPageRoute;
-		case '#pagetwo':
-			return _astroash$elm_spa_boiler_plate$Types$PageTwoRoute;
 		case '#thirdPage':
 			return _astroash$elm_spa_boiler_plate$Types$ThirdPageRoute;
 		case '#sent':
@@ -9613,7 +9610,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('mw6 center main min-h-100 mh-100'),
+			_0: _elm_lang$html$Html_Attributes$class('center main'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9759,7 +9756,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (_p3)
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('flex flex-column iconContainer ma3 tc center'),
+			_0: _elm_lang$html$Html_Attributes$class('flex flex-column iconContainer ma3 tc center items-center'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9795,7 +9792,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$createIcon = function (_p3)
 								_elm_lang$core$Basics_ops['++'],
 								_astroash$elm_spa_boiler_plate$Routes_SecondPage$isChecked(
 									{ctor: '_Tuple2', _0: _p5, _1: _p6}),
-								' dib br-100 h5 w5 icon')),
+								' dib br-100 h4 w4 icon')),
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$html$Html_Attributes$for('icon'),
@@ -9843,7 +9840,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100 mh-100'),
+			_0: _elm_lang$html$Html_Attributes$class('center main flex flex-column'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -9857,7 +9854,7 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 						_elm_lang$html$Html$h1,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('tc f3 pa5 ma2'),
+							_0: _elm_lang$html$Html_Attributes$class('tc f3 pa3 ma2'),
 							_1: {ctor: '[]'}
 						},
 						{
@@ -9894,53 +9891,12 @@ var _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage = function (mode
 		});
 };
 
-var _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo = function (model) {
-	return A2(
-		_elm_lang$html$Html$div,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('w-60-ns center'),
-			_1: {ctor: '[]'}
-		},
-		{
-			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$h1,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('tc f1'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('hello'),
-					_1: {ctor: '[]'}
-				}),
-			_1: {
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$p,
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('f3 w60 mh1 tc'),
-						_1: {ctor: '[]'}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('Welcome to Page Two'),
-						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			}
-		});
-};
-
 var _astroash$elm_spa_boiler_plate$Routes_Sent$sent = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('mw6 center min-h-100 bg-red white tc mh-100 pv5'),
+			_0: _elm_lang$html$Html_Attributes$class('center main--red white tc pv5'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -10077,7 +10033,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$makeIcon = function (_p11) {
 					_elm_lang$core$Basics_ops['++'],
 					_astroash$elm_spa_boiler_plate$Routes_ThirdPage$messageToClass(
 						{ctor: '_Tuple2', _0: _p13, _1: _p14}),
-					' pointer ba bw2 br-pill pa4 pl5 tc mw5half center mb5')),
+					' pointer ba bw2 br-pill pa4 pl5 tc mw5half center mv5')),
 			_1: {
 				ctor: '::',
 				_0: _elm_lang$html$Html_Events$onClick(
@@ -10109,7 +10065,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model)
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('center main mw6 min-h-100 mh-100'),
+			_0: _elm_lang$html$Html_Attributes$class('center main'),
 			_1: {ctor: '[]'}
 		},
 		{
@@ -10118,7 +10074,7 @@ var _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage = function (model)
 				_elm_lang$html$Html$h1,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('tc f3 pa5 ma2'),
+					_0: _elm_lang$html$Html_Attributes$class('tc f3 pa3 ma2'),
 					_1: {ctor: '[]'}
 				},
 				{
@@ -10241,8 +10197,6 @@ var _astroash$elm_spa_boiler_plate$View$view = function (model) {
 				return _astroash$elm_spa_boiler_plate$Routes_Home$home(model);
 			case 'SecondPageRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_SecondPage$secondPage(model);
-			case 'PageTwoRoute':
-				return _astroash$elm_spa_boiler_plate$Routes_PageTwo$pageTwo(model);
 			case 'ThirdPageRoute':
 				return _astroash$elm_spa_boiler_plate$Routes_ThirdPage$thirdPage(model);
 			default:
