@@ -8,11 +8,11 @@ import Types exposing (..)
 
 thirdPage : Model -> Html Msg
 thirdPage model =
-    div [ class "center main mw6 min-h-100 mh-100" ]
-        [ h1 [ class "tc f3 pa5 ma2" ]
+    div [ class "center main" ]
+        [ h1 [ class "tc f3 pa3 ma2" ]
             [ text "What's your story?" ]
         , makeIcons model
-        , div [ id "audiocontainer" ]
+        , div [ id "audiocontainer", class "dn" ]
             [ div [ id "soundclips" ]
                 [ audio [ controls True, id "audio", src model.audioMessage ]
                     []

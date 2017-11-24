@@ -24,6 +24,25 @@ h1 {
 
 .main {
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(242, 242, 242, 0.9) 100%);
+  min-width: 375px;
+  min-height: 667px;
+  max-width: 400px;
+  max-height: 700px;
+}
+
+.main--red {
+  background: var(--red);
+  min-width: 375px;
+  min-height: 667px;
+
+  max-width: 400px;
+  max-height: 700px;
+}
+
+.main--brand {
+  background: var(--brand-teal);
+  max-width: 375px;
+  max-height: 667px;
 }
 
 .w6 {
