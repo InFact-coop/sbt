@@ -1,0 +1,12 @@
+<svg width="74" height="55" viewBox="0 0 74 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>wifi</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(38 2043)">
+<g id="wifi">
+<use xlink:href="#path0_fill" transform="translate(-38 -2043)" fill="#00B5D6"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 15.929L 6.69857 22.9212C 23.3445 5.54566 50.3397 5.54566 66.9857 22.9212L 73.6842 15.929C 53.3373 -5.30968 20.3469 -5.30968 0 15.929ZM 26.7943 43.8977L 36.8421 54.386L 46.89 43.8977C 41.3469 38.1117 32.3373 38.1117 26.7943 43.8977ZM 13.3971 29.9134L 20.0957 36.9055C 29.3397 27.2563 44.3445 27.2563 53.5885 36.9055L 60.2871 29.9134C 47.3421 16.401 26.3421 16.401 13.3971 29.9134Z"/>
+</defs>
+</svg>
