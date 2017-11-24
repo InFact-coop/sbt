@@ -9627,7 +9627,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 						_elm_lang$html$Html$h1,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt5 b'),
+							_0: _elm_lang$html$Html_Attributes$class('tc ma0 pt3 b'),
 							_1: {ctor: '[]'}
 						},
 						{
@@ -9674,7 +9674,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 							_elm_lang$html$Html$h2,
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class('tc pt4 f3'),
+								_0: _elm_lang$html$Html_Attributes$class('tc ma0 mt2 pt2'),
 								_1: {ctor: '[]'}
 							},
 							{
@@ -9683,12 +9683,12 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 									_elm_lang$html$Html$span,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('db'),
+										_0: _elm_lang$html$Html_Attributes$class('db f3'),
 										_1: {ctor: '[]'}
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('Choose your'),
+										_0: _elm_lang$html$Html$text('Welcome to'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -9697,12 +9697,12 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 										_elm_lang$html$Html$span,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('db'),
+											_0: _elm_lang$html$Html_Attributes$class('db f4'),
 											_1: {ctor: '[]'}
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('avatar'),
+											_0: _elm_lang$html$Html$text('Edinburgh Central Library'),
 											_1: {ctor: '[]'}
 										}),
 									_1: {ctor: '[]'}
@@ -9716,7 +9716,7 @@ var _astroash$elm_spa_boiler_plate$Routes_Home$home = function (model) {
 						_elm_lang$html$Html$a,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('db br-100 w10 h10 center bg-bookbug'),
+							_0: _elm_lang$html$Html_Attributes$class('mt4 db br-100 w9 h9 center bg-bookbug'),
 							_1: {
 								ctor: '::',
 								_0: _elm_lang$html$Html_Attributes$href('#secondPage'),

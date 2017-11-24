@@ -12,7 +12,7 @@ home model =
         [ section
             []
             [ h1
-                [ class "tc ma0 pt5 b" ]
+                [ class "tc ma0 pt3 b" ]
                 [ span
                     [ class "db" ]
                     [ text "Hi, " ]
@@ -24,17 +24,17 @@ home model =
         , section
             []
             [ h2
-                [ class "tc pt4 f3" ]
+                [ class "tc ma0 mt2 pt2" ]
                 [ span
-                    [ class "db" ]
-                    [ text "Choose your" ]
+                    [ class "db f3" ]
+                    [ text "Welcome to" ]
                 , span
-                    [ class "db" ]
-                    [ text "avatar" ]
+                    [ class "db f4" ]
+                    [ text "Edinburgh Central Library" ]
                 ]
             ]
         , a
-            [ class "db br-100 w10 h10 center bg-bookbug", href "#secondPage" ]
+            [ class "mt4 db br-100 w9 h9 center bg-bookbug", href "#secondPage" ]
             []
         , audio [] []
         ]
