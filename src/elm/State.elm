@@ -13,6 +13,7 @@ initModel =
     , reasonForVisiting = [ ( "school trip", False ), ( "borrow a book", False ), ( "use a computer", False ), ( "wifi", False ), ( "event", False ), ( "bookbug", False ) ]
     , audioMessage = ""
     , showModal = False
+    , starClass = 0
     }
 
 
@@ -28,6 +29,9 @@ getRoute hash =
 
         "#secondPage" ->
             SecondPageRoute
+
+        "#reviewPage" ->
+            ReviewPageRoute
 
         "#thirdPage" ->
             ThirdPageRoute
@@ -70,6 +74,9 @@ update msg model =
 
         ReviewModal ->
             ( { model | showModal = False }, Cmd.none )
+
+        YellowStarClass int ->
+            ( { model | starClass = int }, Cmd.none )
 
 
 port recordStart : String -> Cmd msg

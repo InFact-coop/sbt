@@ -9,6 +9,7 @@ import Html.Attributes exposing (..)
 import Types exposing (..)
 import Routes.Home exposing (..)
 import Routes.SecondPage exposing (..)
+import Routes.ReviewPage exposing (..)
 import Routes.ThirdPage exposing (..)
 import Routes.Navbar exposing (..)
 
@@ -23,6 +24,9 @@ view model =
 
                 SecondPageRoute ->
                     secondPage model
+
+                ReviewPageRoute ->
+                    reviewPage model
 
                 ThirdPageRoute ->
                     thirdPage model

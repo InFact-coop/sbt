@@ -183,3 +183,18 @@ h1 {
   background-size: 60%;
   background-position: center;
 }
+
+.ratedStar {
+    cursor: pointer;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url('assets/star.svg') no-repeat;
+    background-size: 40%;
+    background-position: center;
+    border: none;
+}
+
+.mh-100{
+  min-height: 100vh;
+}
