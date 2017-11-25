@@ -4,7 +4,6 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Types exposing (..)
-import Time exposing (Time, second)
 
 
 thirdPage : Model -> Html Msg
