@@ -9200,17 +9200,17 @@ var _astroash$elm_spa_boiler_plate$State$update = F2(
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				default:
-					return (_elm_lang$core$Native_Utils.cmp(model.autoCount, 4) > -1) ? {
+					return (_elm_lang$core$Native_Utils.cmp(model.autoCount, 3) > 0) ? {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
-							{route: _astroash$elm_spa_boiler_plate$Types$StoryBoardRoute}),
+							{autoCount: 0, route: _astroash$elm_spa_boiler_plate$Types$StoryBoardRoute}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					} : {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
-							{messageLength: model.messageLength + 1}),
+							{autoCount: model.autoCount + 1}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 			}
@@ -9233,7 +9233,9 @@ var _astroash$elm_spa_boiler_plate$State$subscriptions = function (model) {
 					_0: _elm_lang$core$Native_Utils.eq(model.route, _astroash$elm_spa_boiler_plate$Types$SentRoute) ? A2(
 						_elm_lang$core$Time$every,
 						_elm_lang$core$Time$second,
-						_elm_lang$core$Basics$always(_astroash$elm_spa_boiler_plate$Types$Count)) : _elm_lang$core$Platform_Sub$none,
+						function (t) {
+							return _astroash$elm_spa_boiler_plate$Types$Count;
+						}) : _elm_lang$core$Platform_Sub$none,
 					_1: {ctor: '[]'}
 				}
 			}

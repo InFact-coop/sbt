@@ -141,10 +141,10 @@ update msg model =
             ( { model | starClass = int, backgroundColor = True }, Cmd.none )
 
         Count ->
-            if model.autoCount >= 4 then
-                ( { model | route = StoryBoardRoute }, Cmd.none )
+            if model.autoCount > 3 then
+                ( { model | autoCount = 0, route = StoryBoardRoute }, Cmd.none )
             else
-                ( { model | messageLength = model.messageLength + 1 }, Cmd.none )
+                ( { model | autoCount = model.autoCount + 1 }, Cmd.none )
 
 
 port recordStart : String -> Cmd msg
@@ -165,7 +165,7 @@ subscriptions model =
           else
             Sub.none
         , if model.route == SentRoute then
-            Time.every second (always Count)
+            Time.every second (\t -> Count)
           else
             Sub.none
         ]
