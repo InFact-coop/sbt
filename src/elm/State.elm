@@ -142,7 +142,7 @@ update msg model =
 
         Count ->
             if model.autoCount >= 4 then
-                ( { model | route = StoryBoard }, Cmd.none )
+                ( { model | route = StoryBoardRoute }, Cmd.none )
             else
                 ( { model | messageLength = model.messageLength + 1 }, Cmd.none )
 
