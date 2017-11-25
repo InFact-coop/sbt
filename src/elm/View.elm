@@ -11,6 +11,8 @@ import Routes.Home exposing (..)
 import Routes.SecondPage exposing (..)
 import Routes.ReviewPage exposing (..)
 import Routes.ThirdPage exposing (..)
+import Routes.Sent exposing (..)
+import Routes.FourthPage exposing (..)
 import Routes.StoryBoard exposing (..)
 
 
@@ -31,8 +33,14 @@ view model =
                 ThirdPageRoute ->
                     thirdPage model
 
+                SentRoute ->
+                    sent model
+
                 StoryBoardRoute ->
                     storyBoard model
+
+                FourthPageRoute ->
+                    fourthPage model
     in
         div [ class "" ]
             [ page

@@ -8,11 +8,11 @@ import Types exposing (..)
 
 home : Model -> Html Msg
 home model =
-    div [ class "mw6 center main min-h-100" ]
+    div [ class "center main" ]
         [ section
             []
             [ h1
-                [ class "tc ma0 pt5 b" ]
+                [ class "tc ma0 pt3 b" ]
                 [ span
                     [ class "db" ]
                     [ text "Hi, " ]
@@ -24,20 +24,19 @@ home model =
         , section
             []
             [ h2
-                [ class "tc pt4 f3" ]
+                [ class "tc ma0 mt2 pt2" ]
                 [ span
-                    [ class "db" ]
-                    [ text "Choose your" ]
+                    [ class "db f3" ]
+                    [ text "Welcome to" ]
                 , span
-                    [ class "db" ]
-                    [ text "avatar" ]
+                    [ class "db f4" ]
+                    [ text "Edinburgh Central Library" ]
                 , div
                     [ class "corner-right" ]
                     [ a [ href "#secondPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pt3 pr2" ] [ text "1" ] ] ] ]
                 ]
             ]
         , a
-            [ class "db br-100 w10 h10 center bg-bookbug", href "#secondPage" ]
+            [ class "mt4 db br-100 w9 h9 center bg-bookbug", href "#secondPage" ]
             []
-        , audio [] []
         ]

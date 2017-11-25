@@ -42,7 +42,7 @@
   --spacing-small: .5rem;
   --spacing-medium: 1rem;
   --spacing-large: 2rem;
-  --spacing-extra-large: 4rem;
+  --spacing-extra-large: 5rem;
   --spacing-extra-extra-large: 8rem;
   --spacing-extra-extra-extra-large: 16rem;
 
@@ -72,8 +72,9 @@
   --max-width-2: 2rem;
   --max-width-3: 4rem;
   --max-width-4: 10rem;
-  --max-width-5: 16rem;
-  --max-width-6: 27rem;
+  --max-width-5: 12rem;
+  --max-width-5half: 21rem;
+  --max-width-6: 29rem;
   --max-width-7: 48rem;
   --max-width-8: 64rem;
   --max-width-9: 96rem;
@@ -140,7 +141,7 @@
  --white-0125: rgba(255,255,255,.0125);
 
   --dark-red:  #e7040f;
-  --red:  #ff4136;
+  --red:  #EB5757;
   --light-red:  #ff725c;
   --orange:  #D05E25;
   --gold:  #ffb700;
