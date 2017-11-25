@@ -9,10 +9,11 @@ import Html.Attributes exposing (..)
 import Types exposing (..)
 import Routes.Home exposing (..)
 import Routes.SecondPage exposing (..)
-import Routes.Sent exposing (..)
+import Routes.ReviewPage exposing (..)
 import Routes.ThirdPage exposing (..)
+import Routes.Sent exposing (..)
 import Routes.FourthPage exposing (..)
-import Routes.Navbar exposing (..)
+import Routes.StoryBoard exposing (..)
 
 
 view : Model -> Html Msg
@@ -26,16 +27,21 @@ view model =
                 SecondPageRoute ->
                     secondPage model
 
+                ReviewPageRoute ->
+                    reviewPage model
+
                 ThirdPageRoute ->
                     thirdPage model
 
-                FourthPageRoute ->
-                    fourthPage model
-
                 SentRoute ->
                     sent model
+
+                StoryBoardRoute ->
+                    storyBoard model
+
+                FourthPageRoute ->
+                    fourthPage model
     in
         div [ class "" ]
-            [ navbar model
-            , page
+            [ page
             ]

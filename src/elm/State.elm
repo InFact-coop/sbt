@@ -16,6 +16,9 @@ initModel =
     , audioMessage = ""
     , messageLength = 0
     , paused = True
+    , starClass = 0
+    , backgroundColor = False
+    , autoCount = 0
     }
 
 
@@ -40,6 +43,12 @@ getRoute hash =
 
         "#sent" ->
             SentRoute
+
+        "#reviewPage" ->
+            ReviewPageRoute
+
+        "#storyBoard" ->
+            StoryBoardRoute
 
         _ ->
             HomeRoute
@@ -128,6 +137,15 @@ update msg model =
                 Stage0 ->
                     ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
 
+        YellowStarClass int ->
+            ( { model | starClass = int, backgroundColor = True }, Cmd.none )
+
+        Count ->
+            if model.autoCount >= 4 then
+                ( { model | route = StoryBoard }, Cmd.none )
+            else
+                ( { model | messageLength = model.messageLength + 1 }, Cmd.none )
+
 
 port recordStart : String -> Cmd msg
 
@@ -144,6 +162,10 @@ subscriptions model =
         [ audioUrl RecieveAudio
         , if not model.paused then
             Time.every second (always Increment)
+          else
+            Sub.none
+        , if model.route == SentRoute then
+            Time.every second (always Count)
           else
             Sub.none
         ]

@@ -31,10 +31,12 @@ home model =
                 , span
                     [ class "db f4" ]
                     [ text "Edinburgh Central Library" ]
+                , div
+                    [ class "corner-right" ]
+                    [ a [ href "#secondPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pt3 pr2" ] [ text "1" ] ] ] ]
                 ]
             ]
         , a
             [ class "mt4 db br-100 w9 h9 center bg-bookbug", href "#secondPage" ]
             []
-        , audio [] []
         ]

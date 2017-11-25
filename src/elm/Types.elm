@@ -1,7 +1,6 @@
 module Types exposing (..)
 
 import Navigation
-import Time exposing (Time, second)
 
 
 -- Model
@@ -13,6 +12,8 @@ type Route
     | ThirdPageRoute
     | FourthPageRoute
     | SentRoute
+    | ReviewPageRoute
+    | StoryBoardRoute
 
 
 type Message
@@ -35,6 +36,9 @@ type alias Model =
     , audioMessage : String
     , messageLength : Int
     , paused : Bool
+    , starClass : Int
+    , backgroundColor : Bool
+    , autoCount : Int
     }
 
 
@@ -52,3 +56,5 @@ type Msg
     | ToggleVideo ( Message, Stage )
     | ToggleText ( Message, Stage )
     | Increment
+    | YellowStarClass Int
+    | Count

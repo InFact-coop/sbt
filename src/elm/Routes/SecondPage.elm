@@ -11,7 +11,8 @@ secondPage model =
     div [ class "center main flex flex-column" ]
         [ section [] [ h1 [ class "tc f3 pa3 ma4" ] [ text "What brings you here?" ] ]
         , createIcons model
-        , a [ href "#thirdPage", class "link brand db w5 h5 bg-white br-100 center f4 tc" ] [ text "Next >" ]
+        , div [ class "corner-right" ]
+            [ a [ href "#reviewPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pt3 pr2" ] [ text "2" ] ] ] ]
         ]
 
 

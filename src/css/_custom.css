@@ -229,3 +229,33 @@ h1 {
 .mh-100 {
   min-height: 100vh;
 }
+
+.star {
+    cursor: pointer;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url('assets/star.svg') no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border: none;
+    padding: 0.75rem;
+    margin: 0.25rem;
+}
+
+.star-checked {
+    cursor: pointer;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url('assets/checkedstar.svg') no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border: none;
+    padding: 0.75rem;
+    margin: 0.25rem;;
+}
+
+.bg-blue {
+  background-color: var(--brand-teal);
+}
