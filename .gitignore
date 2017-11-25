@@ -5,11 +5,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-style.min.css
+public/style.min.css
 
 # Elm
 elm-stuff
-elm.js
+public/elm.js
 
 # Runtime data
 pids
