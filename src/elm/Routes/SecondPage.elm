@@ -8,7 +8,7 @@ import Types exposing (..)
 
 secondPage : Model -> Html Msg
 secondPage model =
-    div [ class "center main flex flex-column" ]
+    div [ class "center main flex flex-column homeContainer" ]
         [ section [] [ h1 [ class "tc f3 pa3 ma4" ] [ text "What brings you here?" ] ]
         , createIcons model
         , div [ class "corner-right" ]

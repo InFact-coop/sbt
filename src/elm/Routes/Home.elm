@@ -4,11 +4,12 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Types exposing (..)
+import Routes.SecondPage
 
 
 home : Model -> Html Msg
 home model =
-    div [ class "center main" ]
+    div [ class "center main homeContainer" ]
         [ section
             []
             [ h1
@@ -39,4 +40,6 @@ home model =
         , a
             [ class "mt4 db br-100 w9 h9 center bg-bookbug", href "#secondPage" ]
             []
+        , div [ style [ ( "display", "none" ) ] ]
+            [ Routes.SecondPage.secondPage model ]
         ]
