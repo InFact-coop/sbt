@@ -78,8 +78,8 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1em;
+  height: 1em;
   background-color: #aedeef;
 }
 
@@ -88,7 +88,7 @@ h1 {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 0 1.5em 1.5em;
+  border-width: 0 0 1em 1em;
   border-color: transparent transparent #00b5d6 transparent;
 }
 
