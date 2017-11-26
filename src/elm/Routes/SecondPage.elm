@@ -12,7 +12,7 @@ secondPage model =
         [ section [] [ h1 [ class "tc f3 pa3 ma4" ] [ text "What brings you here?" ] ]
         , createIcons model
         , div [ class "corner-right" ]
-            [ a [ href "#reviewPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pt3 pr2" ] [ text "2" ] ] ] ]
+            [ a [ href "#reviewPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "2" ] ] ] ]
         ]
 
 

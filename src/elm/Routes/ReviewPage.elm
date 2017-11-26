@@ -8,7 +8,7 @@ import Types exposing (..)
 
 reviewPage : Model -> Html Msg
 reviewPage model =
-    div [ class <| "center main mw6 homeContainer mh-100 " ++ (hasChanged model) ]
+    div [ class <| "center main mw6 homeContainer" ++ (hasChanged model) ]
         [ h1 [ class "tc f3 pt6" ] [ text "How would you rate your experience?" ]
         , Html.form [ class "star-rating center pl2 tc pt4" ]
             [ fieldset [ class "bn" ]
@@ -19,7 +19,7 @@ reviewPage model =
                 ]
             ]
         , div [ class "corner-right" ]
-            [ a [ href "#thirdPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pt3 pr2" ] [ text "3" ] ] ] ]
+            [ a [ href "#thirdPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "3" ] ] ] ]
         ]
 
 
