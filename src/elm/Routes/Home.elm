@@ -33,7 +33,7 @@ home model =
                     [ text "Edinburgh Central Library" ]
                 , div
                     [ class "corner-right" ]
-                    [ a [ href "#secondPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pt5 pr2" ] [ text "1" ] ] ] ]
+                    [ a [ href "#secondPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pt3 pr2" ] [ text "1" ] ] ] ]
                 ]
             ]
         , a

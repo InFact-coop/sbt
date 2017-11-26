@@ -285,6 +285,32 @@ h1 {
   background-color: var(--brand-teal);
 }
 
-.date {
-  color: var(--red);
+
+.blueBubble {
+  background: url("assets/otherBubble.svg") no-repeat;
+  background-size: 100%;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 3rem;
+}
+
+.redBubble {
+  background: url("assets/redBubble.svg") no-repeat;
+  background-size: 100%;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 12rem;
+}
+
+.borrowbooks{
+  background: url("assets/borrowbooks.svg") no-repeat;
+  background-size: 100%;
+  width: 8rem;
+  height: 8rem;
+  margin-left: 3rem;
+}
+
+.audio {
+  background-color: var(--red);
+
 }
