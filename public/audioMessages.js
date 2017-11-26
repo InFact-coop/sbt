@@ -22,6 +22,7 @@ if (navigator.mediaDevices) {
         chunks = [];
         // jstoelm
         var audioURL = window.URL.createObjectURL(blob);
+        console.log("blob", blob)
         app.ports.audioUrl.send(audioURL);
         console.log('AudioURL: ', audioURL);
         console.log("recorder stopped");

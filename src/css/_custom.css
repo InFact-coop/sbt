@@ -284,3 +284,7 @@ h1 {
 .bg-blue {
   background-color: var(--brand-teal);
 }
+
+.date {
+  color: var(--red);
+}
