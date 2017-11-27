@@ -1,6 +1,6 @@
 # SBT 
 
-Check us on [here](https://sbt.surge.sh)
+Check the app on [here](https://sbt.surge.sh)
 
 ## Design Workshop
 
