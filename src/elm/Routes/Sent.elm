@@ -14,9 +14,4 @@ sent model =
             , h1 [ class "white sans ma0 f1 pv5 link" ]
                 [ text "Thanks!" ]
             ]
-        , div [ class "footer" ]
-            [ div
-                [ class "corner-right" ]
-                [ a [ href "#storyboard" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "..." ] ] ] ]
-            ]
         ]
