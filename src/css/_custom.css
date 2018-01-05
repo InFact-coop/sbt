@@ -10,6 +10,8 @@ body {
   color: var(--brand-teal);
   margin: 0;
   font-weight: 400;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(242, 242, 242, 0.9) 100%);
+  min-height: 100vh;
 }
 
 button {
@@ -22,17 +24,8 @@ h1 {
   font-weight: 700;
 }
 
-.main {
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(242, 242, 242, 0.9) 100%);
-  min-height: 667px;
-  min-width: 375px;
-  max-height: 736px;
-  max-width: 414px;
-}
 .main--red {
   background: var(--red);
-  max-height: 700px;
-  max-width: 400px;
 }
 
 .w6 {
@@ -67,10 +60,11 @@ h1 {
   height: var(--height-10);
 }
 
-/*folded page*/
+/* folded page */
 
 .homeContainer {
   position: relative;
+  min-height: 100vh;
   box-shadow:0 1px 0 rgba(0,0,0,.2);
 }
 
@@ -78,17 +72,17 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 1em;
-  height: 1em;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: #aedeef;
 }
 
-.homeContainer .corner-right .corner-right-triangle {
+.corner-right-triangle {
   position: absolute;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 0 1em 1em;
+  border-width: 0 0 2.5rem 2.5rem;
   border-color: transparent transparent #00b5d6 transparent;
 }
 
@@ -96,7 +90,7 @@ h1 {
 
 .iconGrid {
   display: grid;
-  /*justify-items: center;*/
+  height: 0;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 4fr 4fr 4fr;
   align-items: center;
@@ -206,6 +200,13 @@ h1 {
   background-position: 14% center;
 }
 
+.err-checked {
+  background:url('assets/err.svg') no-repeat;
+  background-color: var(--red);
+  background-size: 14%;
+  background-position: 14% center;
+}
+
 .write {
   background:url('assets/write.svg') no-repeat;
   background-size: 17%;
@@ -244,7 +245,7 @@ h1 {
 }
 
 .mw5half {
-  max-width: var(--max-width-5half);
+  /* max-width: var(--max-width-5half); */
 }
 
 .sans {
@@ -252,7 +253,7 @@ h1 {
 }
 
 .mh-100 {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .star {
@@ -302,7 +303,7 @@ h1 {
   margin-left: 12rem;
 }
 
-.borrowbooks{
+.borrowbooks {
   background: url("assets/borrowbooks.svg") no-repeat;
   background-size: 100%;
   width: 8rem;
@@ -312,5 +313,8 @@ h1 {
 
 .audio {
   background-color: var(--red);
+}
 
+.footer {
+  height: 2.5rem;
 }

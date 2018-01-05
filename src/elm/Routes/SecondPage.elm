@@ -8,11 +8,14 @@ import Types exposing (..)
 
 secondPage : Model -> Html Msg
 secondPage model =
-    div [ class "center main flex flex-column homeContainer" ]
-        [ section [] [ h1 [ class "tc f3 pa3 ma4" ] [ text "What brings you here?" ] ]
+    div [ class "center main homeContainer" ]
+        [ section [] [ h1 [ class "tc f3 pa3 ma2" ] [ text "What brings you here?" ] ]
         , createIcons model
-        , div [ class "corner-right" ]
-            [ a [ href "#reviewPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "2" ] ] ] ]
+        , div [ class "footer" ]
+            [ div
+                [ class "corner-right" ]
+                [ a [ href "#reviewPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "2" ] ] ] ]
+            ]
         ]
 
 

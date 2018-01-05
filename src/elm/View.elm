@@ -42,6 +42,6 @@ view model =
                 FourthPageRoute ->
                     fourthPage model
     in
-        div [ class "" ]
+        div [ class "w-100 fixed overflow-y-scroll top-0 bottom-0", id "container" ]
             [ page
             ]
