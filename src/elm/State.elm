@@ -2,6 +2,8 @@ port module State exposing (..)
 
 import Types exposing (..)
 import Time exposing (Time, second)
+import Task exposing (..)
+import Dom.Scroll exposing (..)
 
 
 -- MODEL
@@ -74,6 +76,9 @@ findToggledMessage message ( mappedMessage, mappedStage ) =
 
             Stage2 ->
                 ( mappedMessage, Stage0 )
+
+            StageErr ->
+                ( mappedMessage, StageErr )
     else
         ( mappedMessage, mappedStage )
 
@@ -81,6 +86,9 @@ findToggledMessage message ( mappedMessage, mappedStage ) =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        NoOp ->
+            ( model, Cmd.none )
+
         Increment ->
             if model.messageLength >= 30 then
                 model
@@ -90,7 +98,7 @@ update msg model =
                 ( { model | messageLength = model.messageLength + 1 }, Cmd.none )
 
         UrlChange location ->
-            ( { model | route = (getRoute location.hash) }, Cmd.none )
+            ( { model | route = (getRoute location.hash) }, Task.attempt (always NoOp) (toBottom "container") )
 
         ToggleIcon classTuple ->
             ( { model | reasonForVisiting = (List.map (\n -> findToggledIcon n classTuple) model.reasonForVisiting) }, Cmd.none )
@@ -104,8 +112,14 @@ update msg model =
         RecieveAudio string ->
             ( { model | audioMessage = string }, Cmd.none )
 
+        RecordError err ->
+            ( { model | messageType = [ ( Audio, StageErr ), ( Video, Stage0 ), ( Text, Stage0 ) ] }, Cmd.none )
+
         ToggleAudio ( message, stage ) ->
             case stage of
+                StageErr ->
+                    ( { model | route = StoryBoardRoute, messageType = [ ( Audio, StageErr ), ( Video, Stage0 ), ( Text, Stage0 ) ] }, Cmd.none )
+
                 Stage2 ->
                     ( { model | messageLength = 0, route = SentRoute, messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
 
@@ -117,6 +131,9 @@ update msg model =
 
         ToggleText ( message, stage ) ->
             case stage of
+                StageErr ->
+                    ( { model | messageType = [ ( Audio, Stage0 ), ( Video, Stage0 ), ( Text, StageErr ) ] }, Cmd.none )
+
                 Stage2 ->
                     ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
 
@@ -128,6 +145,9 @@ update msg model =
 
         ToggleVideo ( message, stage ) ->
             case stage of
+                StageErr ->
+                    ( { model | messageType = [ ( Audio, Stage0 ), ( Video, StageErr ), ( Text, Stage0 ) ] }, Cmd.none )
+
                 Stage2 ->
                     ( { model | messageType = (List.map (\n -> findToggledMessage message n) model.messageType) }, Cmd.none )
 
@@ -153,6 +173,9 @@ port recordStart : String -> Cmd msg
 port recordStop : String -> Cmd msg
 
 
+port recordError : (String -> msg) -> Sub msg
+
+
 port audioUrl : (String -> msg) -> Sub msg
 
 
@@ -160,6 +183,7 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
         [ audioUrl RecieveAudio
+        , recordError RecordError
         , if not model.paused then
             Time.every second (always Increment)
           else

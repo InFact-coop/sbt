@@ -8,10 +8,15 @@ import Types exposing (..)
 
 thirdPage : Model -> Html Msg
 thirdPage model =
-    div [ class "center main" ]
+    div [ class "center main homeContainer" ]
         [ h1 [ class "tc f3 pa3 ma4" ]
             [ text "What's your story?" ]
         , makeIcons model
+        , div [ class "footer" ]
+            [ div
+                [ class "corner-right" ]
+                [ a [ href "#storyBoard" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "4" ] ] ] ]
+            ]
         ]
 
 
@@ -26,7 +31,7 @@ makeIcons model =
 
 makeIcon : ( Message, Stage ) -> Model -> Html Msg
 makeIcon ( message, stage ) model =
-    div [ class <| (messageToClass ( message, stage )) ++ " pointer ba bw2 br-pill pa4 pl5 tc mw5half center mv5", onClick (messageToMsg ( message, stage )) ] [ text <| messageToText ( message, stage ) model ]
+    div [ class <| (messageToClass ( message, stage )) ++ " pointer ba bw2 br-pill pa4 pl5 tc mw5half mv5 mh3", onClick (messageToMsg ( message, stage )) ] [ text <| messageToText ( message, stage ) model ]
 
 
 messageToMsg : ( Message, Stage ) -> Msg
@@ -78,7 +83,7 @@ messageToText ( message, stage ) model =
             "SEND IT"
 
         _ ->
-            ""
+            "error :( click here"
 
 
 messageToClass : ( Message, Stage ) -> String
@@ -102,5 +107,14 @@ messageToClass ( message, stage ) =
         ( Text, Stage2 ) ->
             "write brand b--brand"
 
-        _ ->
+        ( Video, Stage0 ) ->
             "dn"
+
+        ( Video, Stage1 ) ->
+            "dn"
+
+        ( Video, Stage2 ) ->
+            "dn"
+
+        _ ->
+            "err-checked b--red white f4"

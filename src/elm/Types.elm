@@ -26,6 +26,7 @@ type Stage
     = Stage0
     | Stage1
     | Stage2
+    | StageErr
 
 
 type alias Model =
@@ -51,6 +52,7 @@ type Msg
     | ToggleIcon ( String, Bool )
     | RecordStart String
     | RecordStop String
+    | RecordError String
     | RecieveAudio String
     | ToggleAudio ( Message, Stage )
     | ToggleVideo ( Message, Stage )
@@ -58,3 +60,4 @@ type Msg
     | Increment
     | YellowStarClass Int
     | Count
+    | NoOp

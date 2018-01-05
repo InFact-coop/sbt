@@ -8,7 +8,9 @@ if (navigator.mediaDevices) {
   var chunks = [];
   var mediaRecorder;
 
+
   app.ports.recordStart.subscribe(function() {
+    console.log("HELLO");
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
       mediaRecorder = new MediaRecorder(stream);
       mediaRecorder.start();
@@ -20,7 +22,7 @@ if (navigator.mediaDevices) {
 
         var blob = new Blob(chunks, {'type': 'audio/ogg; codecs=opus'});
         chunks = [];
-        // jstoelm
+        // js to elm
         var audioURL = window.URL.createObjectURL(blob);
         console.log("blob", blob)
         app.ports.audioUrl.send(audioURL);
@@ -31,7 +33,11 @@ if (navigator.mediaDevices) {
       mediaRecorder.ondataavailable = function(e) {
         chunks.push(e.data);
       };
-    })
+    }).catch(function(err) {
+      // js to elm
+      console.log("Can't start audio!");
+        app.ports.recordError.send("Can't start audio!");
+    });
   });
 
   app.ports.recordStop.subscribe(function() {

@@ -8,8 +8,8 @@ import Types exposing (..)
 
 reviewPage : Model -> Html Msg
 reviewPage model =
-    div [ class <| "center main mw6 homeContainer" ++ (hasChanged model) ]
-        [ h1 [ class "tc f3 pt6" ] [ text "How would you rate your experience?" ]
+    div [ class <| "center main homeContainer" ]
+        [ h1 [ class "tc f3 pa4" ] [ text "How would you rate your experience?" ]
         , Html.form [ class "star-rating center pl2 tc pt4" ]
             [ fieldset [ class "bn" ]
                 [ span [ class "star-group" ]
@@ -18,8 +18,11 @@ reviewPage model =
                     )
                 ]
             ]
-        , div [ class "corner-right" ]
-            [ a [ href "#thirdPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "3" ] ] ] ]
+        , div [ class "footer" ]
+            [ div
+                [ class "corner-right" ]
+                [ a [ href "#thirdPage" ] [ div [ class "corner-right-triangle" ] [ p [ class "white f4 fr pr1" ] [ text "3" ] ] ] ]
+            ]
         ]
 
 
@@ -48,6 +51,6 @@ lightStar model =
 hasChanged : Model -> String
 hasChanged model =
     if (model.backgroundColor == True) then
-        "bg-blue"
+        " bg-blue"
     else
         ""
